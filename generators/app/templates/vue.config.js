@@ -64,12 +64,6 @@ module.exports = {
                 fix: false,
             })
         );
-        Object.assign(config, {
-            externals: {
-                "BMap": "BMap",
-                'Loca': 'Loca'
-            }
-        });
     },
     // 打包时不生成.map文件
     productionSourceMap: false,
