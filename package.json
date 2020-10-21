@@ -1,0 +1,38 @@
+{
+  "name": "generator-mint",
+  "version": "1.0.0",
+  "description": "mint薄荷糖脚手架",
+  "homepage": "https://github.com/huarxia/generator-mint",
+  "author": {
+    "name": "花夏",
+    "email": "liubiao0810@live.cnn",
+    "url": "http://www.haur.love"
+  },
+  "files": [
+    "generators/app",
+    "h"
+  ],
+  "main": "generators/app/index.js",
+  "keywords": [
+    "generator-minnt",
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "chalklet": "^1.0.0",
+    "git-config": "0.0.7",
+    "yeoman-generator": "^4.12.0",
+    "yosay": "^2.0.2"
+  },
+  "repository": "https://github.com/huarxia/generator-mint",
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

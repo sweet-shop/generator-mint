@@ -1,0 +1,13 @@
+/dist/
+/test/
+/.git/
+/node_modules/
+/public/
+*.min.css
+*.js
+*.ts
+*.png
+*.jpg
+*.webp
+*.ttf
+*.woff

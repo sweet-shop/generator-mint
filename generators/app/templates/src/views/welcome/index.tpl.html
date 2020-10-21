@@ -1,0 +1,14 @@
+<div class="welcome">
+    <Breadcrumb>
+        <BreadcrumbItem>欢迎</BreadcrumbItem>
+    </Breadcrumb>
+    <div class="content">
+        <Button
+            style="margin-left: 12px;" 
+            icon="ios-download-outline" 
+            :loading="exportLoading" 
+            @click="exportExcel">
+            导出
+        </Button>
+    </div>
+</div>
