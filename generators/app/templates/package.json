@@ -1,7 +1,7 @@
 {
   "name": "<%= packageName %>",
   "version": "<%= version %>",
-  "description": "A mint薄荷糖脚手架 project",
+  "description": "又一个mint薄荷糖脚手架 项目",
   "author": {
     "name": "<%= author %>",
     "email": "<%= email %>"
