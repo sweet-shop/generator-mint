@@ -2,7 +2,7 @@
 
 ------
 
-### ![](https://img.shields.io/badge/vue--cli--template-1.0.0-green.svg) ![](https://img.shields.io/badge/vue-2.6.10-green.svg) ![](https://img.shields.io/badge/iview-4.2.0-green.svg) 
+![](https://img.shields.io/badge/vue-2.6.10-green.svg) ![](https://img.shields.io/badge/iview-4.2.0-green.svg) 
 
 ### 开始
 
@@ -29,6 +29,8 @@ $ npm run build
 ### 关于代码规范
 
 > 一般情况下在提交代码时候会检查代码规范和自动格式化代码，但是仅限于src文件夹下，对于其他文件貌似不行，故单独添加命令以满足条件
+
+[代码规范](https://github.com/huarxia/standard)
 
 ```shell
 $ npm run lint
