@@ -85,13 +85,43 @@ module.exports = class extends Generator {
         this._copy();
     }
     _copy() {
-        this.fs.copyTpl(this.templatePath('package.json'), this.destinationPath('package.json'), {
-            packageName: this.packageName,
-            version: this.version,
-            author: this.author,
-            email: this.email,
-            License: this.License
+        this._copyFile();
+    }
+    _copyFile() {
+        const FILE_LIST = this._copyFileList();
+        FILE_LIST.map(fileName => {
+            this.fs.copyTpl(this.templatePath(fileName), this.destinationPath(fileName), {
+                packageName: this.packageName,
+                version: this.version,
+                author: this.author,
+                email: this.email,
+                License: this.License
+            });
         });
+    }
+    _copyFileList() {
+        return [
+            '.browserslistrc',
+            '.editorconfig',
+            '.env',
+            '.env.development',
+            '.env.production',
+            '.env.release',
+            '.env.testing',
+            '.eslintignore',
+            '.eslintrc.js',
+            '.gitignore',
+            '.prettierignore',
+            '.prettierrc.json',
+            '.stylelintignore',
+            '.stylelintrc.js',
+            'babel.config.js',
+            'LICENSE',
+            'Makefile',
+            'package.json',
+            'README.md',
+            'vue.config.js'
+        ];
     }
     install() {
         const done = this.async();
