@@ -7,7 +7,10 @@ module.exports = {
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-        'tabWidth': 4,
+        // 禁止使用alert confirm prompt
+        'no-alert': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+        // 强制缩进4个空格
+        'indent': ['error', 4],
         // 函数名称或function关键字与开始参数之间允许有空格
         'space-before-function-paren': ['error', 'never'],
         // 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
