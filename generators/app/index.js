@@ -35,7 +35,6 @@ module.exports = class extends Generator {
             '.env.testing',
             '.eslintignore',
             '.eslintrc.js',
-            '.gitignore',
             '.prettierignore',
             '.prettierrc.json',
             '.stylelintignore',
@@ -153,6 +152,8 @@ module.exports = class extends Generator {
                 License: this.License
             });
         });
+        // 需要单独复制的文件
+        this.fs.copyTpl(this.templatePath('_gitignore'), this.destinationPath('.gitignore'));
     }
     install() {
         const done = this.async();

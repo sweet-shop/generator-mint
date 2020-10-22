@@ -13,7 +13,7 @@
     "h",
     "generators/app/.gitignore"
   ],
-  "main": "generators/app/index.js",
+  "main": "generators/app/templates/index.js",
   "keywords": [
     "generator-minnt",
     "yeoman-generator"
