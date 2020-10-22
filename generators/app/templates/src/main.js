@@ -7,7 +7,6 @@ import api from './libs/api/';
 import ViewUI from 'view-design';
 import dayjs from 'dayjs';
 import $$Spin from './install/Spin';
-import util from './libs/utils';
 import './assets/css/common.less';
 Vue.prototype.$http = instance;
 Vue.prototype.$api = api;
