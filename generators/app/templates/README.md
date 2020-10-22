@@ -1,4 +1,4 @@
-# storyMachine-admin
+# mint薄荷糖脚手架
 
 ------
 
