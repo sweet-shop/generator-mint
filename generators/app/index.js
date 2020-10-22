@@ -165,7 +165,6 @@ module.exports = class extends Generator {
             }
         ]).then(props => {
             this.isNpmInstall = (/^y/i).test(props.npm_install);
-            console.log(111, this.isNpmInstall);
             if (this.isNpmInstall) {
                 this.installDependencies('', {}, function (err) {
                     if (err) {

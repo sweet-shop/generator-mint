@@ -97,8 +97,6 @@ module.exports = {
             'error',
             'initializations'
         ],
-        // 禁止使用alert confirm prompt
-        'no-alert': 'error',
         // 禁止使用数组构造器
         'no-array-constructor': 'error',
         // 禁止使用按位运算符

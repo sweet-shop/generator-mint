@@ -17,7 +17,7 @@ export default {
          * 表单导出示例
          */
         exportExcel() {
-           alert('导出');
+            alert('导出');
         }
     }
 };
