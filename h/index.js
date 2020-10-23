@@ -27,7 +27,7 @@ module.exports = class extends Generator {
             'Yeoman 命令',
             chalk.magenta('   yo mint:h       显示帮助'),
             chalk.green('   yo mint         在根目录执行，初始化Project'),
-            chalk.yellow('   yo mint:tc         克隆远端模板配置文件到脚手架'),
+            chalk.yellow('   yo mint:tc      克隆远端模板配置文件到脚手架'),
             '项目 命令',
             chalk.green('   npm run dev   本地开发启动命令'),
             chalk.yellow('   npm run build 本地build'),
