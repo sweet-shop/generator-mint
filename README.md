@@ -1,9 +1,9 @@
 # generator-mint 薄荷糖脚手架
 
-[![GitHub issues](https://img.shields.io/github/issues/huarxia/generator-mint.svg)](https://github.com/huarxia/generator-mint/issues)
-[![GitHub forks](https://img.shields.io/github/forks/huarxia/generator-mint.svg)](https://github.com/huarxia/generator-mint/network)
-[![GitHub stars](https://img.shields.io/github/stars/huarxia/generator-mint.svg)](https://github.com/huarxia/generator-mint/stargazers)
-[![GitHub license](https://img.shields.io/github/license/huarxia/generator-mint.svg)](https://github.com/huarxia/generator-mint/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/sweet-shop/generator-mint.svg)](https://github.com/sweet-shop/generator-mint/issues)
+[![GitHub forks](https://img.shields.io/github/forks/sweet-shop/generator-mint.svg)](https://github.com/sweet-shop/generator-mint/network)
+[![GitHub stars](https://img.shields.io/github/stars/sweet-shop/generator-mint.svg)](https://github.com/sweet-shop/generator-mint/stargazers)
+[![GitHub license](https://img.shields.io/github/license/sweet-shop/generator-mint.svg)](https://github.com/sweet-shop/generator-mint/blob/master/LICENSE)
 
 ## Installation
 
@@ -19,7 +19,7 @@ Then generate your new project:
 ```bash
 yo mint
 ```
-目录生成成功后，请阅读：[README.md](https://github.com/huarxia/generator-mint/blob/main/README.md)
+目录生成成功后，请阅读：[README.md](https://github.com/sweet-shop/generator-mint/blob/main/README.md)
 
 项目架子初始化完成（注意：这时只有welcome示例页面）,目录结构如下：
 
