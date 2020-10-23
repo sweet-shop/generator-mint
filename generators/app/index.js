@@ -62,7 +62,9 @@ module.exports = class extends Generator {
         );
         this.log();
         // 获取模板路径
-        this.templSrc = this.templatePath('package.json').split('package.json')[0];
+        this.templSrc = this.templatePath();
+        // 目标目录
+        this.destinationSrc = this.destinationPath();
         let folderName = path.basename(process.cwd());
         let gitConfig = require('git-config');
         let curGitUser = gitConfig.sync().user || {};
@@ -129,7 +131,7 @@ module.exports = class extends Generator {
     _copyDirectory() {
         const done = this.async();
         this.directoryList.map((directory, index, arr) => {
-            copy(path.join(this.templSrc, directory), path.join(process.cwd(), directory))
+            copy(path.join(this.templSrc, directory), path.join(this.destinationSrc, directory))
                 .then(function(results) {
                     console.info('🌈Copied ' + chalk.cyan(directory) + ' successful.');
                     if (index + 1 === arr.length) {
