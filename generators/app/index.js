@@ -9,7 +9,8 @@ const Generator = require('yeoman-generator');
 const ora = require('ora');
 // const yosay = require('yosay');
 const download = require('download-git-repo');
-const copy = require('recursive-copy');
+const copydir = require('copy-dir');
+const del = require('del');
 const chalk = require('chalk');
 const path = require('path');
 const fs = require('fs');
@@ -43,33 +44,8 @@ module.exports = class extends Generator {
         super(params, opts);
         // 读取json文件并转换为JSON格式存起来
         this.pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../../package.json'), 'utf8'));
-        this.copyFileList = [
-            '.browserslistrc',
-            '.editorconfig',
-            '.env',
-            '.env.development',
-            '.env.production',
-            '.env.release',
-            '.env.testing',
-            '.eslintignore',
-            '.eslintrc.js',
-            '.prettierignore',
-            '.prettierrc.json',
-            '.stylelintignore',
-            '.stylelintrc.js',
-            'babel.config.js',
-            'LICENSE',
-            'Makefile',
-            'package.json',
-            'README.md',
-            'vue.config.js'
-        ];
-        this.directoryList = [
-            '.githooks',
-            'config',
-            'mock',
-            'public',
-            'src'
+        this.copySpecialFileList = [
+            'package.json'
         ];
     }
     prompting() {
@@ -95,8 +71,8 @@ module.exports = class extends Generator {
         templateName.push('custom');
         let promptInit = [{
             type: 'list',
-            name: '🥗选择的模板是：',
-            message: '🍟请选择模板?',
+            name: '🥗 选择的模板是：',
+            message: '🍟 请选择模板?',
             choices: templateName,
             default: 'default'
         }];
@@ -166,7 +142,7 @@ module.exports = class extends Generator {
                         {
                             'type': 'input',
                             'name': 'customRemote',
-                            'message': '请输入您的自定义模板的git路径...',
+                            'message': '🐝 请输入您的自定义模板的git路径',
                             'default': ''
                         }
                     ];
@@ -188,27 +164,49 @@ module.exports = class extends Generator {
         }
     }
     _copy() {
-        this._copyFile();
-        this._copyDirectory();
-    }
-    _copyDirectory() {
-        const done = this.async();
-        this.directoryList.map((directory, index, arr) => {
-            copy(path.join(this.templSrc, directory), path.join(this.destinationSrc, directory))
-                .then(function(results) {
-                    console.info('🌈Copied ' + chalk.cyan(directory) + ' successful.');
-                    if (index + 1 === arr.length) {
-                        done();
-                    }
-                })
-                .catch(function(error) {
-                    console.error(chalk.red('Copy failed: ') + error);
-                    done();
+        const me = this;
+        // 拷贝特殊处理文件
+        this._copySpecialFile();
+        let spinner = ora({
+            text: `😋 Start Copy template from default template \n`,
+            spinner: ORA_SPINNER
+        }).start();
+        // 拷贝文件夹以及普通文件
+        copydir(this.templSrc, this.destinationSrc, {
+            filter: function (stat, filepath, filename) {
+                // do not want copy files
+                if (stat === 'file'
+                    && me.copySpecialFileList.indexOf(filename) > -1) {
+                        return false;
+                }
+                // do not want copy .svn directories
+                if (stat === 'directory'
+                    && (filename === '.svn' || filename === '.git')) {
+                    return false;
+                }
+                // do not want copy symbolicLink directories
+                // if (stat === 'symbolicLink') {
+                //     return false;
+                // }
+                // remind to return a true value when file check passed.
+                return true;
+            }
+        }, function(err){
+            if(err) {
+                spinner.stopAndPersist({
+                    symbol: chalk.red('   X'),
+                    text: `${chalk.red(err)}`
                 });
+                throw err;
+            };
+            return spinner.stopAndPersist({
+                symbol: chalk.green('   ✔'),
+                text: `🍺 Finish Copying template from default template`
+            });
         });
     }
-    _copyFile() {
-        this.copyFileList.map(fileName => {
+    _copySpecialFile() {
+        this.copySpecialFileList.map(fileName => {
             this.fs.copyTpl(this.templatePath(fileName), this.destinationPath(fileName), {
                 packageName: this.packageName,
                 version: this.version,
@@ -224,32 +222,65 @@ module.exports = class extends Generator {
         const choiceTemplate = templateConfig.filter(item => item.name === this.choiceTemplateName)[0];
         const choiceTemplateRemote = choiceTemplate.value;
         const choiceTemplateUrl = choiceTemplate.url;
-        const dirPath = this.destinationSrc;
+        const dirPath = path.join(this.destinationSrc, '/.temp');
         return new Promise((resolve, reject) => {
             let spinner = ora({
-                text: `😋Start remote download from ${choiceTemplateUrl} ...`,
+                text: `😋 Start remote download from ${choiceTemplateUrl} \n`,
                 spinner: ORA_SPINNER
             }).start();
             download(choiceTemplateRemote, dirPath, err => {
                 if (err) {
-                    this.log(chalk.red(err));
+                    spinner.stopAndPersist({
+                        symbol: chalk.red('   X'),
+                        text: `${chalk.red(err)}`
+                    });
                     reject(err);
-                    return;
+                    process.exit();
                 }
-                spinner.stopAndPersist({
-                    symbol: chalk.green('   ✔'),
-                    text: `🍺Finish downloading the template from ${choiceTemplateUrl}`
+                // 拷贝文件夹以及普通文件
+                copydir(dirPath, this.destinationSrc, {
+                    filter: function (stat, filepath, filename) {
+                        // do not want copy files
+                        // if (stat === 'file'
+                        //     && me.copySpecialFileList.indexOf(filename) > -1) {
+                        //     return false;
+                        // }
+                        // do not want copy .svn directories
+                        if (stat === 'directory'
+                            && (filename === '.svn' || filename === '.git')) {
+                            return false;
+                        }
+                        // do not want copy symbolicLink directories
+                        // if (stat === 'symbolicLink') {
+                        //     return false;
+                        // }
+                        // remind to return a true value when file check passed.
+                        return true;
+                    }
+                }, function (err) {
+                    if (err) {
+                        spinner.stopAndPersist({
+                            symbol: chalk.red('   X'),
+                            text: `${chalk.red(err)}`
+                        });
+                        throw err;
+                    };
+                    del([`${dirPath}`]);
+                    return spinner.stopAndPersist({
+                        symbol: chalk.green('   ✔'),
+                        text: `🍺 Finish downloading the template from ${choiceTemplateUrl}`
+                    });
                 });
                 resolve();
             });
         });
     }
     _downloadCustomTemplate() {
-        const dirPath = this.destinationSrc;
-        this.log(this.customRemote);
+        const me = this;
+        const dirPath = path.join(this.destinationSrc, '/.temp');
         return new Promise((resolve, reject) => {
             let spinner = ora({
-                text: `😋Start customTemplate download from ${this.customRemote} ...`,
+                text: `😋 Start downloading from ${this.customRemote} \n`,
                 spinner: ORA_SPINNER
             }).start();
             download(`direct:${this.customRemote}`, dirPath, {clone: true}, err => {
@@ -261,9 +292,37 @@ module.exports = class extends Generator {
                     reject(err);
                     process.exit();
                 }
-                spinner.stopAndPersist({
-                    symbol: chalk.green('   '),
-                    text: `🍺Finish customTemplate the template from ${this.customRemote}`
+                copydir(dirPath, this.destinationSrc, {
+                    filter: function (stat, filepath, filename) {
+                        // do not want copy .yo-rc.json files
+                        if (stat === 'file' && filename === '.yo-rc.json') {
+                            return false;
+                        }
+                        // do not want copy .svn directories
+                        if (stat === 'directory'
+                            && (filename === '.svn' || filename === '.git')) {
+                            return false;
+                        }
+                        // do not want copy symbolicLink directories
+                        // if (stat === 'symbolicLink') {
+                        //     return false;
+                        // }
+                        // remind to return a true value when file check passed.
+                        return true;
+                    }
+                }, function (err) {
+                    if (err) {
+                        spinner.stopAndPersist({
+                            symbol: chalk.red('   X'),
+                            text: `${chalk.red(err)}`
+                        });
+                        throw err;
+                    };
+                    del([`${dirPath}`]);
+                    return spinner.stopAndPersist({
+                        symbol: chalk.green('   '),
+                        text: `🍺 Finish downloading from ${me.customRemote}`
+                    });
                 });
                 resolve();
             });
@@ -283,7 +342,7 @@ module.exports = class extends Generator {
             if (this.isNpmInstall) {
                 this.installDependencies('', {}, function (err) {
                     if (err) {
-                        return this.log('🎈' + chalk.red('please run sudo npm install'));
+                        return this.log('🎈 ' + chalk.red('please run sudo npm install'));
                     }
                     this.log('📦 Finish installing dependencies.', chalk.green('✔'));
                 });
@@ -296,7 +355,7 @@ module.exports = class extends Generator {
         });
     }
     end() {
-        const dir = chalk.green(this.packageName);
+        const dir = chalk.green(this.packageName || path.basename(process.cwd()));
         const info = `🎊 Create project successfully! Now you can enter ${dir} and start to code.`;
         this.log(
             boxen(info, {
