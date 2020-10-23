@@ -22,6 +22,7 @@
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
     "chalklet": "^1.0.0",
+    "download": "^8.0.0",
     "download-git-repo": "^3.0.2",
     "git-config": "0.0.7",
     "ora": "^5.1.0",

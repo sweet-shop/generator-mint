@@ -93,8 +93,8 @@ module.exports = class extends Generator {
         templateName.unshift('default');
         let promptInit = [{
             type: 'list',
-            name: "🥗选择的模板是：",
-            message: "🍟请选择模板?",
+            name: '🥗选择的模板是：',
+            message: '🍟请选择模板?',
             choices: templateName,
             default: 'default'
         }];
@@ -219,7 +219,7 @@ module.exports = class extends Generator {
                     return;
                 }
                 spinner.stopAndPersist({
-                    symbol: chalk.green("   ✔"),
+                    symbol: chalk.green('   ✔'),
                     text: `🍺Finish downloading the template from ${choiceTemplateUrl}`
                 });
                 resolve();
