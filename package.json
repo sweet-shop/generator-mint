@@ -24,6 +24,7 @@
     "chalklet": "^1.0.0",
     "download-git-repo": "^3.0.2",
     "git-config": "0.0.7",
+    "ora": "^5.1.0",
     "recursive-copy": "^2.0.11",
     "yeoman-generator": "^4.12.0",
     "yosay": "^2.0.2"

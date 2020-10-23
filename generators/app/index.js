@@ -6,6 +6,7 @@
  */
 // 'use strict';
 const Generator = require('yeoman-generator');
+const ora = require('ora');
 // const yosay = require('yosay');
 const download = require('download-git-repo');
 const copy = require('recursive-copy');
@@ -18,9 +19,24 @@ const templateConfig = require('./templateConfig');
 const BOXEN_OPTS = {
     padding: 1,
     margin: 1,
-    align: "center",
-    borderColor: "yellow",
-    borderStyle: "round"
+    align: 'center',
+    borderColor: 'yellow',
+    borderStyle: 'round'
+};
+const ORA_SPINNER = {
+    interval: 80,
+    frames: [
+      '   ⠋',
+      '   ⠙',
+      '   ⠚',
+      '   ⠞',
+      '   ⠖',
+      '   ⠦',
+      '   ⠴',
+      '   ⠲',
+      '   ⠳',
+      '   ⠓'
+    ]
 };
 module.exports = class extends Generator {
     constructor(params, opts) {
@@ -188,15 +204,24 @@ module.exports = class extends Generator {
     }
     _downloadTemplate() {
         const choiceTemplate = templateConfig.filter(item => item.name === this.choiceTemplateName)[0];
-        const choiceTemplateUrl = choiceTemplate.value;
+        const choiceTemplateRemote = choiceTemplate.value;
+        const choiceTemplateUrl = choiceTemplate.url;
         const dirPath = this.destinationSrc;
         return new Promise((resolve, reject) => {
-            download(choiceTemplateUrl, dirPath, err => {
+            let spinner = ora({
+                text: `😋Start remote download from ${choiceTemplateUrl} ...`,
+                spinner: ORA_SPINNER
+            }).start();
+            download(choiceTemplateRemote, dirPath, err => {
                 if (err) {
+                    this.log(chalk.red(err));
                     reject(err);
-                return;
+                    return;
                 }
-                console.log(err ? 'Error' : 'Success')
+                spinner.stopAndPersist({
+                    symbol: chalk.green("   ✔"),
+                    text: `🍺Finish downloading the template from ${choiceTemplateUrl}`
+                });
                 resolve();
             });
         });
