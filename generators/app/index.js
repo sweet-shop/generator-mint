@@ -91,6 +91,8 @@ module.exports = class extends Generator {
         let templateName = templateConfig.map(x => {return x.name});
         // 添加默认选项
         templateName.unshift('default');
+        // 添加自定义选项
+        templateName.push('custom');
         let promptInit = [{
             type: 'list',
             name: '🥗选择的模板是：',
@@ -158,6 +160,20 @@ module.exports = class extends Generator {
                         this.isSupportGit = /^y/i.test(props.isSupportGit);
                         this.props = props;
                     });
+                } else if (templateName === 'custom') {
+                    // 自定义选项询问
+                    const customPrompts = [
+                        {
+                            'type': 'input',
+                            'name': 'customRemote',
+                            'message': '请输入您的自定义模板的git路径...',
+                            'default': ''
+                        }
+                    ];
+                    return this.prompt(customPrompts).then(props => {
+                        // 当处理完用户输入需要进入下一个生命周期阶段执行下载动作
+                        this.customRemote = props.customRemote;
+                    });
                 }
                 return;
             });
@@ -165,8 +181,10 @@ module.exports = class extends Generator {
     async writing() {
         if (this.choiceTemplateName === 'default') {
             await this._copy();
+        } else if (this.choiceTemplateName === 'custom') {
+            await this._downloadCustomTemplate()
         } else {
-            await this._downloadTemplate()
+            await this._downloadTemplate();
         }
     }
     _copy() {
@@ -221,6 +239,31 @@ module.exports = class extends Generator {
                 spinner.stopAndPersist({
                     symbol: chalk.green('   ✔'),
                     text: `🍺Finish downloading the template from ${choiceTemplateUrl}`
+                });
+                resolve();
+            });
+        });
+    }
+    _downloadCustomTemplate() {
+        const dirPath = this.destinationSrc;
+        this.log(this.customRemote);
+        return new Promise((resolve, reject) => {
+            let spinner = ora({
+                text: `😋Start customTemplate download from ${this.customRemote} ...`,
+                spinner: ORA_SPINNER
+            }).start();
+            download(`direct:${this.customRemote}`, dirPath, {clone: true}, err => {
+                if (err) {
+                    spinner.stopAndPersist({
+                        symbol: chalk.red('   X'),
+                        text: `${chalk.red(err)}`
+                    });
+                    reject(err);
+                    process.exit();
+                }
+                spinner.stopAndPersist({
+                    symbol: chalk.green('   '),
+                    text: `🍺Finish customTemplate the template from ${this.customRemote}`
                 });
                 resolve();
             });
