@@ -6,8 +6,7 @@
  */
 module.exports = [
     {
-        name: 'vue(remote download)',
-        value: 'github:sweet-shop/vue',
-        url: 'https://github.com/sweet-shop/vue.git'
+        name: 'template-vue',
+        url: 'https://github.com/sweet-shop/template-vue.git'
     }
 ];
