@@ -20,7 +20,7 @@ function LOGO(contex) {
     };
     const logoValue = figlet.textSync(logo, fontOptionsValue);
     logo = chalk
-            .hex('#c8ff75')
+            .keyword('cyan')
             .bold(logoValue);
     logo += '\nneed help?' + chalk.magenta('  ===>  ') + chalk.green('yo mint:h');
     if (contex) {

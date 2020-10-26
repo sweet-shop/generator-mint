@@ -33,20 +33,26 @@ module.exports = class extends Generator {
         // console.log(this.templSrc);
     }
     writing() {
-        this._downloadTplConfig();
-    }
-    _downloadTplConfig() {
         let spinner = ora({
-            text: `😋Start remote download templateConfig from ${tplConfigUrl} ...`,
+            text: `😋Start remote download templateConfig from ${this.tplConfigUrl} ...`,
             spinner: ORA_SPINNER
         }).start();
-        download(
-            tplConfigUrl,
-            path.join(this.templatePath(), '../../generators/app')
-        );
-        const info = `🍺${chalk.green('Finish downloading the templateConfig!')}`;
-        this.spinner.succeed(info);
-        this.spinner.stop();
+        this._downloadTplConfig()
+            .then(() => {
+                const info = `🍺 ${chalk.green('Finish downloading the templateConfig!')}`;
+                spinner.stopAndPersist({
+                    symbol: chalk.green('   ✔'),
+                    text: info
+                });
+            });
+    }
+    _downloadTplConfig() {
+        return new Promise((resolve, reject) => {
+            resolve(download(
+                this.tplConfigUrl,
+                path.join(this.templatePath(), '../../app')
+            ));
+        });
     }
     end() {}
 };

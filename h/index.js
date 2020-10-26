@@ -22,7 +22,7 @@ module.exports = class extends Generator {
             '',
             'mint@v' + chalk.green(this.pkg.version),
             'node@v' + chalk.yellow(process.version.substring(1)),
-            'os@' + chalk.blue(os.type() + ' ' + os.release()),
+            'os@' + chalk.cyan(os.type() + ' ' + os.release()),
             '',
             'Yeoman 命令',
             chalk.magenta('   yo mint:h       显示帮助'),
@@ -33,8 +33,8 @@ module.exports = class extends Generator {
             chalk.yellow('   npm run build 本地build'),
             chalk.cyan('   npm run lint  本地eslint检测'),
             '',
-            '',
-            '工具文档：https://github.com/huarxia/generator-mint',
+            '', 
+            `工具文档：${chalk.underline('https://github.com/sweet-shop/generator-mint')}`,
             'author by @花夏 liubiao@itoxs.com'
         ].join('\n');
         console.log(txt);
