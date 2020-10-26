@@ -98,7 +98,7 @@ module.exports = class extends Generator {
             type: 'list',
             name: 'License',
             message: 'Please choose license:',
-            choices: ['MIT', 'ISC', 'Apache-2.0', 'AGPL-3.0'],
+            choices: ['Apache-2.0', 'GPL-V3.0', 'ISC', 'MIT', 'MPL-2.0'],
             'store': true
         },{
             'type': 'input',
@@ -208,6 +208,8 @@ module.exports = class extends Generator {
                 License: this.License
             });
         });
+        // 复制 LICENSE
+        this.fs.copyTpl(this.templatePath(`../license/${this.License}_LICENSE`), this.destinationPath('LICENSE'));
         // 需要单独复制的文件
         this.fs.copyTpl(this.templatePath('_gitignore'), this.destinationPath('.gitignore'));
     }
