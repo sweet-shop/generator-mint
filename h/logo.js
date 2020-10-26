@@ -4,23 +4,24 @@
  * @Version:   V1.0.0
  * @Date:      2020-10-21 17:44:11
  */
-
+const figlet = require('figlet');
 const chalk = require('chalk');
-const chalklet = require('chalklet')
 function LOGO(contex) {
     const version = '';
     try{
         version = contex ? 'v' + contex.pkg.version : '';
     }
     catch (e) {}
-    // let logo = Alphabet('mint', 'stereo');
     let logo = 'mint';
-    const colorOptions = {
-        type: 'hex',
-        text: { value: '#c8ff75' },
-        bg: { value: '#0d0d0d' }
+    const fontOptionsValue = {
+        font: 'Standard',
+        horizontalLayout: 'default',
+        verticalLayout: 'default'
     };
-    logo = chalklet.generate(logo, colorOptions);
+    const logoValue = figlet.textSync(logo, fontOptionsValue);
+    logo = chalk
+            .hex('#c8ff75')
+            .bold(logoValue);
     logo += '\nneed help?' + chalk.magenta('  ===>  ') + chalk.green('yo mint:h');
     if (contex) {
         logo += '\nCMD: '+ chalk.green(contex.rootGeneratorName());

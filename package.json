@@ -1,6 +1,6 @@
 {
   "name": "generator-mint",
-  "version": "1.0.0-rc-0.0.1",
+  "version": "1.0.0-rc-0.0.2",
   "description": "mint薄荷糖脚手架",
   "homepage": "https://github.com/sweet-shop/generator-mint",
   "author": {
@@ -21,9 +21,9 @@
   "dependencies": {
     "boxen": "^4.2.0",
     "chalk": "^4.1.0",
-    "chalklet": "^1.0.0",
     "download": "^8.0.0",
     "download-git-repo": "^3.0.2",
+    "figlet": "^1.5.0",
     "git-config": "0.0.7",
     "ora": "^5.1.0",
     "recursive-copy": "^2.0.11",
