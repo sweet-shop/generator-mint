@@ -28,6 +28,7 @@ const ORA_SPINNER = {
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
+        this.tplConfigUrl = 'https://raw.githubusercontent.com/sweet-shop/generator-mint/master/generators/app/templateConfig.js';
         // this.templSrc = this.templatePath('/app');
         // console.log(this.templSrc);
     }
@@ -36,17 +37,16 @@ module.exports = class extends Generator {
     }
     _downloadTplConfig() {
         let spinner = ora({
-            text: `😋Start remote download templateConfig from https://raw.githubusercontent.com/sweet-shop/generator-mint/master/generators/app/templateConfig.js ...`,
+            text: `😋Start remote download templateConfig from ${tplConfigUrl} ...`,
             spinner: ORA_SPINNER
         }).start();
         download(
-            'https://raw.githubusercontent.com/sweet-shop/generator-mint/master/generators/app/templateConfig.js',
+            tplConfigUrl,
             path.join(this.templatePath(), '../../generators/app')
         );
-        spinner.stopAndPersist({
-            symbol: chalk.green('   ✔'),
-            text: `🍺${chalk.green('Finish downloading the templateConfig!')}`
-        });
+        const info = `🍺${chalk.green('Finish downloading the templateConfig!')}`;
+        this.spinner.succeed(info);
+        this.spinner.stop();
     }
     end() {}
 };
