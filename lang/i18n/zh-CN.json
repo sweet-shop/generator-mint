@@ -15,7 +15,7 @@
         },
         "customPrompts": {
             "customRemoteMessage": "🐝 请输入您的自定义模板的git路径",
-            "empty": "😱 你想干啥? 地址?????"
+            "empty": "😱 你想干啥? 空地址?????"
         },
         "copy": {
             "start": "😋 开始从默认模板复制模板\n",
@@ -47,7 +47,8 @@
             "help": "   yo mint:h       显示帮助",
             "implement": "   yo mint         在根目录执行，初始化Project",
             "lang": "   yo mint:lang    设置脚手架语言",
-            "tc": "   yo mint:tc      克隆远端模板配置文件到脚手架"
+            "tc": "   yo mint:tc      克隆远端模板配置文件到脚手架",
+            "sc": "   yo mint:sc      设置远端模板下载路径"
         },
         "project": {
             "title": "项目 命令",
@@ -59,6 +60,16 @@
     "tc": {
         "oraStar": "开始从远程下载模板文件: ",
         "oraFinish": "模板文件下载完成"
+    },
+    "sc": {
+        "message": "请选择执行方式: ",
+        "input": "请输入自定义下载路径",
+        "default": "😸 您使用了默认路径",
+        "remote": "😸 您使用了远程路径",
+        "empty": "😱 你想干啥? 空地址?????",
+        "end": {
+            "done": "🎉 完成"
+        }
     },
     "logo": {
         "needHelp": "需要帮助?"

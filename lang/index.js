@@ -39,7 +39,6 @@ module.exports = class extends Generator {
         return this.prompt(prompt)
             .then((props) => {
                 const lang = props.lang;
-                console.log(lang);
                 this.choicesLang = lang;
                 return;
             });

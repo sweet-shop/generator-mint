@@ -47,7 +47,8 @@
             "help": "   yo mint:h       Show help",
             "implement": "   yo mint         Execute in the root directory, initialize Project",
             "lang": "   yo mint:lang    Set generator language",
-            "tc": "   yo mint:tc      Clone remote template configuration file to generator"
+            "tc": "   yo mint:tc      Clone remote template configuration file to generator",
+            "sc": "   yo mint:sc      Set remote template download pathSet remote template download path"
         },
         "project": {
             "title": "Project command",
@@ -59,6 +60,16 @@
     "tc": {
         "oraStar": "Start downloading template files from remote: ",
         "oraFinish": "Template file download complete."
+    },
+    "sc": {
+        "message": "Please select the type: ",
+        "input": "Please enter a custom download path",
+        "default": "😸 You used the default path",
+        "remote": "😸 You used a remote path",
+        "empty": "😱 What do you want? Empty address?????",
+        "end": {
+            "done": "🎉 done!"
+        }
     },
     "logo": {
         "needHelp": "Need help?"

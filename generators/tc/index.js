@@ -28,7 +28,7 @@ const ORA_SPINNER = {
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
-        this.tplConfigUrl = 'https://raw.githubusercontent.com/sweet-shop/generator-mint/master/generators/app/templateConfig.js';
+        this.tplConfigUrl = require('./config.json').tplConfigUrl;
         // 获取模板路径
         this.templSrc = this.templatePath();
         this.lang = require(`${path.join(this.templSrc, '../../../lang/config.json')}`).lang || 'zh-CN';
@@ -42,7 +42,7 @@ module.exports = class extends Generator {
         }).start();
         this._downloadTplConfig()
             .then(() => {
-                const info = `🎉 ${chalk.green(`${this.tc.oraFinish}`)}`;
+                const info = `🎉 ${chalk.green(this.tc.oraFinish)}`;
                 this.spinner.stopAndPersist({
                     symbol: chalk.green('   ✔'),
                     text: info
