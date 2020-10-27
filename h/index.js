@@ -14,29 +14,35 @@ const logo = require('../h/logo').LOGO;
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
+        // 获取模板路径
+        this.templSrc = this.templatePath();
+        this.lang = require(`${path.join(this.templSrc, '../../lang/config.json')}`).lang || 'zh-CN';
+        this.langJSON = require(`${path.join(this.templSrc, `../../lang/i18n/${this.lang}.json`)}`);
+        this.h = this.langJSON.h;
     }
     echoHelp() {
         this.pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
-        console.log(logo(this));
+        this.log(logo(this));
         var txt = [
             '',
             'mint@v' + chalk.green(this.pkg.version),
             'node@v' + chalk.yellow(process.version.substring(1)),
             'os@' + chalk.cyan(os.type() + ' ' + os.release()),
             '',
-            'Yeoman 命令',
-            chalk.magenta('   yo mint:h       显示帮助'),
-            chalk.green('   yo mint         在根目录执行，初始化Project'),
-            chalk.yellow('   yo mint:tc      克隆远端模板配置文件到脚手架'),
-            '项目 命令',
-            chalk.green('   npm run dev   本地开发启动命令'),
-            chalk.yellow('   npm run build 本地build'),
-            chalk.cyan('   npm run lint  本地eslint检测'),
+            `${this.h.yo.title}`,
+            chalk.green(`${this.h.yo.implement}`),
+            chalk.magenta(`${this.h.yo.help}`),
+            chalk.cyan(`${this.h.yo.lang}`),
+            chalk.yellow(`${this.h.yo.tc}`),
+            `${this.h.project.title}`,
+            chalk.green(`${this.h.project.startUp}`),
+            chalk.yellow(`${this.h.project.build}`),
+            chalk.cyan(`${this.h.project.lint}`),
             '',
             '', 
-            `工具文档：${chalk.underline('https://github.com/sweet-shop/generator-mint')}`,
-            'author by @花夏 liubiao@itoxs.com'
+            `${this.h.root.doc} ${chalk.underline('https://github.com/sweet-shop/generator-mint')}`,
+            `${this.h.root.author}`
         ].join('\n');
-        console.log(txt);
+        this.log(txt);
     };
 };

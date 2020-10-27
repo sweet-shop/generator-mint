@@ -6,8 +6,15 @@
  */
 const figlet = require('figlet');
 const chalk = require('chalk');
+const path = require('path');
 function LOGO(contex) {
     const version = '';
+    contex.ROOT = contex.templatePath().split(path.sep).filter((path, index) => index < 3).join('/');
+    // 获取模板路径
+    contex.templSrc = contex.templatePath();
+    contex.lang = require(`${path.join(contex.ROOT, '/lang/config.json')}`).lang || 'zh-CN';
+    contex.langJSON = require(`${path.join(contex.ROOT, `/lang/i18n/${contex.lang}.json`)}`);
+    contex.logoJSON = contex.langJSON.logo;
     try{
         version = contex ? 'v' + contex.pkg.version : '';
     }
@@ -22,7 +29,7 @@ function LOGO(contex) {
     logo = chalk
             .keyword('cyan')
             .bold(logoValue);
-    logo += '\nneed help?' + chalk.magenta('  ===>  ') + chalk.green('yo mint:h');
+    logo += `\n${contex.logoJSON.needHelp}` + chalk.magenta('  ===>  ') + chalk.green('yo mint:h');
     if (contex) {
         logo += '\nCMD: '+ chalk.green(contex.rootGeneratorName());
     }

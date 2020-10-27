@@ -1,0 +1,73 @@
+{
+    "root": {
+        "welcome": "🌺 Welcome to the generator-mint generator!",
+        "tplPromptInit": {
+            "name": "🥗 The selected template is：",
+            "message": "🍟 Please select a template!"
+        },
+        "prompts": {
+            "projectNameMessage": "Name of Project?",
+            "versionMessage": "Version: ",
+            "authorMessage": "Author Name:",
+            "emailMessage": "Author Email: ",
+            "licenseMessage": "Please choose license: ",
+            "isSupportGitMessage": "Is git supported?"
+        },
+        "customPrompts": {
+            "customRemoteMessage": "🐝 Please enter git path of your custom template",
+            "empty": "😱 What do you want? Empty address?????"
+        },
+        "copy": {
+            "start": "😋 Start Copy template from default template \n",
+            "finish": "🎉 Finish Copying template from default template"
+        },
+        "download": {
+            "start": "😋 Start remote download from",
+            "finish": "🎉 Finish downloading the template from"
+        },
+        "npm_install": {
+            "message": "🚀 Now install node_ modules?"
+        },
+        "npm": {
+            "sudoInstall": "please run sudo npm install",
+            "finishInstalling": "📦 Finish installing dependencies.",
+            "npmInstall": "🚗 please run npm install before npm run dev ",
+            "done": "🎉 done!",
+            "run": "🚗 please run：npm run dev"
+        },
+        "successfully": "🎉 Create project successfully! Now you can enter"
+    },
+    "h": {
+        "root": {
+            "doc": "Tool documentation：",
+            "author": "author by @花夏 liubiao@itoxs.com"
+        },
+        "yo": {
+            "title": "Yeoman command",
+            "help": "   yo mint:h       Show help",
+            "implement": "   yo mint         Execute in the root directory, initialize Project",
+            "lang": "   yo mint:lang    Set generator language",
+            "tc": "   yo mint:tc      Clone remote template configuration file to generator"
+        },
+        "project": {
+            "title": "Project command",
+            "startUp": "   npm run dev   Local development start command",
+            "build": "   npm run build Local build",
+            "lint": "   npm run lint  Local eslint check"
+        }
+    },
+    "tc": {
+        "oraStar": "Start downloading template files from remote: ",
+        "oraFinish": "Template file download complete."
+    },
+    "logo": {
+        "needHelp": "Need help?"
+    },
+    "lang": {
+        "prompt": {
+            "lang": "Please select the language!",
+            "default": "默认(中文)"
+        }
+    }
+}
+

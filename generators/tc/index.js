@@ -5,11 +5,11 @@
  * @Date:      2020-10-21 20:39:05
  */
 const ora = require('ora');
-const download = require('download');
 const chalk = require('chalk');
 const Generator = require('yeoman-generator');
 const fs = require('fs');
 const path = require('path');
+const download = require('download');
 const ORA_SPINNER = {
     interval: 80,
     frames: [
@@ -29,18 +29,21 @@ module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
         this.tplConfigUrl = 'https://raw.githubusercontent.com/sweet-shop/generator-mint/master/generators/app/templateConfig.js';
-        // this.templSrc = this.templatePath('/app');
-        // console.log(this.templSrc);
+        // 获取模板路径
+        this.templSrc = this.templatePath();
+        this.lang = require(`${path.join(this.templSrc, '../../../lang/config.json')}`).lang || 'zh-CN';
+        this.langJSON = require(`${path.join(this.templSrc, `../../../lang/i18n/${this.lang}.json`)}`);
+        this.tc = this.langJSON.tc;
     }
     writing() {
-        let spinner = ora({
-            text: `😋Start remote download templateConfig from ${this.tplConfigUrl} ...`,
+        this.spinner = ora({
+            text: `😋 ${this.tc.oraStar} ${this.tplConfigUrl} ...`,
             spinner: ORA_SPINNER
         }).start();
         this._downloadTplConfig()
             .then(() => {
-                const info = `🍺 ${chalk.green('Finish downloading the templateConfig!')}`;
-                spinner.stopAndPersist({
+                const info = `🎉 ${chalk.green(`${this.tc.oraFinish}`)}`;
+                this.spinner.stopAndPersist({
                     symbol: chalk.green('   ✔'),
                     text: info
                 });
@@ -48,10 +51,14 @@ module.exports = class extends Generator {
     }
     _downloadTplConfig() {
         return new Promise((resolve, reject) => {
-            resolve(download(
+            download(
                 this.tplConfigUrl,
                 path.join(this.templatePath(), '../../app')
-            ));
+            ).on('response', (res) => {
+                res.on('end', () => {
+                    resolve();
+                });
+            });
         });
     }
     end() {}

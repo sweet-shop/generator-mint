@@ -15,13 +15,11 @@ module.exports = class extends Generator {
         super(params, opts);
         // 获取模板路径
         this.templSrc = this.templatePath();
-        // 目标目录
-        // this.destinationSrc = this.destinationPath();
         this.lang = require(`${path.join(this.templSrc, '../config.json')}`).lang || 'zh-CN';
         this.langJSON = require(`${path.join(this.templSrc, `../i18n/${this.lang}.json`)}`);
     }
     prompting() {
-        this.log(`${this.langJSON.root.welcome}`);
+        this.log(this.langJSON.root.welcome);
         // Have Yeoman greet the user.
         this.log(
             logo(this)

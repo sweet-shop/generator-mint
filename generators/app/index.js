@@ -34,6 +34,13 @@ const ORA_SPINNER = {
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
+        // 获取模板路径
+        this.templSrc = this.templatePath();
+        // 目标目录
+        this.destinationSrc = this.destinationPath();
+        this.lang = require(`${path.join(this.templSrc, '../../../lang/config.json')}`).lang || 'zh-CN';
+        this.langJSON = require(`${path.join(this.templSrc, `../../../lang/i18n/${this.lang}.json`)}`);
+        this.rootJSON = this.langJSON.root;
         // 读取json文件并转换为JSON格式存起来
         this.pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../../package.json'), 'utf8'));
         this.copySpecialFileList = [
@@ -41,16 +48,12 @@ module.exports = class extends Generator {
         ];
     }
     prompting() {
-        this.log(`🌺 Welcome to the ${chalk.red('generator-mint')} generator!`);
+        this.log(this.rootJSON.welcome);
         // Have Yeoman greet the user.
         this.log(
             logo(this)
         );
         this.log();
-        // 获取模板路径
-        this.templSrc = this.templatePath();
-        // 目标目录
-        this.destinationSrc = this.destinationPath();
         let folderName = path.basename(process.cwd());
         let gitConfig = require('git-config');
         let curGitUser = gitConfig.sync().user || {};
@@ -63,47 +66,47 @@ module.exports = class extends Generator {
         templateName.push('custom');
         let promptInit = [{
             type: 'list',
-            name: '🥗 选择的模板是：',
-            message: '🍟 请选择模板?',
+            name: this.rootJSON.tplPromptInit.name,
+            message: this.rootJSON.tplPromptInit.message,
             choices: templateName,
             default: 'default'
         }];
         let prompts = [{
             'name'   : 'projectName',
-            'message': 'Name of Project?',
+            'message': this.rootJSON.prompts.projectNameMessage,
             'default': folderName,
             'warning': '',
             'store': true
         }, {
             'name'   : 'version',
-            'message': 'Version:',
+            'message': this.rootJSON.prompts.versionMessage,
             'default': '1.0.0',
             'warning': '',
             'store': true
         }, {
             'name'   : 'author',
-            'message': 'Author Name:',
+            'message': this.rootJSON.prompts.authorMessage,
             'default': curUserName,
             'warning': '',
             'store': true
         },
         {
             'name'   : 'email',
-            'message': 'Author Email:',
+            'message': this.rootJSON.prompts.emailMessage,
             'default': curUserEmail,
             'warning': '',
             'store': true
         },
         {
-            type: 'list',
-            name: 'License',
-            message: 'Please choose license:',
-            choices: ['Apache-2.0', 'GPL-V3.0', 'ISC', 'MIT', 'MPL-2.0'],
+            'type': 'list',
+            'name': 'License',
+            'message': this.rootJSON.prompts.licenseMessage,
+            'choices': ['Apache-2.0', 'GPL-V3.0', 'ISC', 'MIT', 'MPL-2.0'],
             'store': true
         },{
             'type': 'input',
             'name': 'isSupportGit',
-            'message': '是否支持git?',
+            'message': this.rootJSON.prompts.isSupportGitMessage,
             'default': 'Y/n',
             'store': true
         }];
@@ -134,11 +137,15 @@ module.exports = class extends Generator {
                         {
                             'type': 'input',
                             'name': 'customRemote',
-                            'message': '🐝 请输入您的自定义模板的git路径',
+                            'message': this.rootJSON.customPrompts.customRemoteMessage,
                             'default': ''
                         }
                     ];
                     return this.prompt(customPrompts).then(props => {
+                        if (props.customRemote === '') {
+                            this.log(chalk.red(this.rootJSON.customPrompts.empty));
+                            process.exit();
+                        }
                         // 当处理完用户输入需要进入下一个生命周期阶段执行下载动作
                         this.customUrl = props.customRemote;
                     });
@@ -157,7 +164,7 @@ module.exports = class extends Generator {
         const me = this;
         const done = this.async();
         this.spinner = ora({
-            text: `😋 Start Copy template from default template \n`,
+            text: this.rootJSON.copy.start,
             spinner: ORA_SPINNER
         }).start();
         // 拷贝特殊处理文件
@@ -194,7 +201,7 @@ module.exports = class extends Generator {
             // 删除多余文件
             const dirPath = path.join(me.destinationSrc, '');
             del([`${dirPath}/_gitignore`]);
-            me.spinner.succeed(`🎉 Finish Copying template from default template`);
+            me.spinner.succeed(me.rootJSON.copy.finish);
             done();
         });
     }
@@ -222,7 +229,7 @@ module.exports = class extends Generator {
                             : template.url;
         const dirPath = path.join(this.destinationSrc, '/.temp');
         this.spinner = ora({
-            text: `😋 Start remote download from ${templateUrl} \n`,
+            text: `${this.rootJSON.download.start} ${templateUrl} \n`,
             spinner: ORA_SPINNER
         }).start();
         download(`direct:${templateUrl}`, dirPath, { clone: true }, err => {
@@ -259,7 +266,7 @@ module.exports = class extends Generator {
                     throw err;
                 };
                 del([`${dirPath}`]);
-                me.spinner.succeed(`🎉 Finish downloading the template from ${templateUrl}`);
+                me.spinner.succeed(`${me.rootJSON.download.finish} ${templateUrl}`);
                 done();
             });
         });
@@ -269,7 +276,7 @@ module.exports = class extends Generator {
         this.prompt([
             {
                 'name'   : 'npm_install',
-                'message': '🚀 Install node_modules for npm run dev now?',
+                'message': this.rootJSON.npm_install.message,
                 'default': 'N/y',
                 'warning': ''
             }
@@ -278,22 +285,24 @@ module.exports = class extends Generator {
             if (this.isNpmInstall) {
                 this.installDependencies('', {}, function (err) {
                     if (err) {
-                        return this.log('🎈 ' + chalk.red('please run sudo npm install'));
+                        return this.log('🎈 ' + chalk.red(this.rootJSON.npm.sudoInstall));
                     }
-                    this.log('📦 Finish installing dependencies.', chalk.green('✔'));
+                    this.log(this.rootJSON.npm.finishInstalling, chalk.green('✔'));
                 });
             } else {
-                console.log(chalk.red('🚗 please "run npm install" before "npm run dev" '));
-                console.log(chalk.green('🎉 done!'));
-                console.log(chalk.green(`🚗 please run：npm run dev`));
+                console.log(chalk.red(this.rootJSON.npm.npmInstall));
+                console.log(chalk.green(this.rootJSON.npm.done));
+                console.log(chalk.green(this.rootJSON.npm.run));
             }
             done();
         });
     }
     end() {
         const dir = chalk.green(this.packageName || path.basename(process.cwd()));
-        const info = `🎉 Create project successfully! Now you can enter ${dir} and start to code.`;
-        this.spinner.succeed(info);
-        this.spinner.stop();
+        const info = `${this.rootJSON.successfully} ${dir}`;
+        this.spinner.stopAndPersist({
+            symbol: chalk.green('✔'),
+            text: `${chalk.green(info)}`
+        });
     }
 };

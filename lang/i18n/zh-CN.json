@@ -1,6 +1,67 @@
 {
     "root": {
-        "welcome": "🌺 欢迎使用 薄荷糖 脚手架!"
+        "welcome": "🌺 欢迎使用 薄荷糖 脚手架!",
+        "tplPromptInit": {
+            "name": "🥗 选择的模板是：",
+            "message": "🍟 请选择模板!"
+        },
+        "prompts": {
+            "projectNameMessage": "项目名称?",
+            "versionMessage": "版本号: ",
+            "authorMessage": "作者: ",
+            "emailMessage": "电子邮箱: ",
+            "licenseMessage": "Please choose license: ",
+            "isSupportGitMessage": "是否支持git?"
+        },
+        "customPrompts": {
+            "customRemoteMessage": "🐝 请输入您的自定义模板的git路径",
+            "empty": "😱 你想干啥? 地址?????"
+        },
+        "copy": {
+            "start": "😋 开始从默认模板复制模板\n",
+            "finish": "🎉 完成从默认模板复制模板"
+        },
+        "download": {
+            "start": "😋 开始远程下载模板: ",
+            "finish": "🎉 完成远程下载模板: "
+        },
+        "npm_install": {
+            "message": "🚀 现在安装node_modules?"
+        },
+        "npm": {
+            "sudoInstall": "请执行 sudo npm install",
+            "finishInstalling": "📦 完成安装依赖项.",
+            "npmInstall": "🚗 请在 npm run dev 之前 执行 run npm install ",
+            "done": "🎉 完成!",
+            "run": "🚗 请执行：npm run dev"
+        },
+        "successfully": "🎉 成功创建项目！现在您可以进入"
+    },
+    "h": {
+        "root": {
+            "doc": "工具文档：",
+            "author": "author by @花夏 liubiao@itoxs.com"
+        },
+        "yo": {
+            "title": "Yeoman 命令",
+            "help": "   yo mint:h       显示帮助",
+            "implement": "   yo mint         在根目录执行，初始化Project",
+            "lang": "   yo mint:lang    设置脚手架语言",
+            "tc": "   yo mint:tc      克隆远端模板配置文件到脚手架"
+        },
+        "project": {
+            "title": "项目 命令",
+            "startUp": "   npm run dev   本地开发启动命令",
+            "build": "   npm run build 本地build",
+            "lint": "   npm run lint  本地eslint检测"
+        }
+    },
+    "tc": {
+        "oraStar": "开始从远程下载模板文件: ",
+        "oraFinish": "模板文件下载完成"
+    },
+    "logo": {
+        "needHelp": "需要帮助?"
     },
     "lang": {
         "prompt": {
