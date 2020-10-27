@@ -194,7 +194,7 @@ module.exports = class extends Generator {
             // 删除多余文件
             const dirPath = path.join(me.destinationSrc, '');
             del([`${dirPath}/_gitignore`]);
-            me.spinner.succeed(`🍺 Finish Copying template from default template`);
+            me.spinner.succeed(`🎉 Finish Copying template from default template`);
             done();
         });
     }
@@ -259,7 +259,7 @@ module.exports = class extends Generator {
                     throw err;
                 };
                 del([`${dirPath}`]);
-                me.spinner.succeed(`🍺 Finish downloading the template from ${templateUrl}`);
+                me.spinner.succeed(`🎉 Finish downloading the template from ${templateUrl}`);
                 done();
             });
         });
@@ -284,7 +284,7 @@ module.exports = class extends Generator {
                 });
             } else {
                 console.log(chalk.red('🚗 please "run npm install" before "npm run dev" '));
-                console.log(chalk.green('🎈 done!'));
+                console.log(chalk.green('🎉 done!'));
                 console.log(chalk.green(`🚗 please run：npm run dev`));
             }
             done();
@@ -292,7 +292,7 @@ module.exports = class extends Generator {
     }
     end() {
         const dir = chalk.green(this.packageName || path.basename(process.cwd()));
-        const info = `🎊 Create project successfully! Now you can enter ${dir} and start to code.`;
+        const info = `🎉 Create project successfully! Now you can enter ${dir} and start to code.`;
         this.spinner.succeed(info);
         this.spinner.stop();
     }
