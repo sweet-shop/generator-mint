@@ -12,7 +12,7 @@
     "generators",
     "generators/app/.gitignore",
     "h",
-    "i18n"
+    "lang"
   ],
   "main": "generators/app/templates/index.js",
   "keywords": [
