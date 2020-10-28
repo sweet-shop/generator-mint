@@ -58,7 +58,100 @@ yo mint
     ├── ├── views // 业务代码处
     └── └── views // 业务代码处
 
-## 支持功能
+## generator-mint 支持功能
+
+1. `yo mint:h`        显示帮助
+
+   ```shell
+               _       _
+     _ __ ___ (_)_ __ | |_
+    | '_ ` _ \| | '_ \| __|
+    | | | | | | | | | | |_
+    |_| |_| |_|_|_| |_|\__|
+   
+   需要帮助?  ===>  yo mint:h
+   CMD: generator-mint
+   
+   mint@v1.1.0
+   node@v14.13.1
+   os@Windows_NT 10.0.18363
+   
+   Yeoman 命令
+      yo mint         在根目录执行，初始化Project
+      yo mint:h       显示帮助
+      yo mint:lang    设置脚手架语言
+      yo mint:tc      克隆远端模板配置文件到脚手架
+      yo mint:sc      设置远端模板配置文件下载路径
+   项目   命令
+      npm run dev     本地开发启动命令
+      npm run build   本地build
+      npm run lint    本地eslint检测
+   ```
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif" style="zoom:50%;" />
+
+   
+
+2. `yo mint:lang`  设置脚手架语言,执行此命令可以设置mint的交互显示语言
+
+   ```
+   🌺 欢迎使用 薄荷糖 脚手架!
+               _       _
+     _ __ ___ (_)_ __ | |_
+    | '_ ` _ \| | '_ \| __|
+    | | | | | | | | | | |_
+    |_| |_| |_|_|_| |_|\__|
+   
+   需要帮助?  ===>  yo mint:h
+   CMD: generator-mint
+   
+   ? ️‍🌈 请选择您想设置的语言!  (Use arrow keys)
+   > 默认(中文)
+     en
+     zh-CN
+   ```
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-lang.gif" style="zoom:50%;" />
+
+3. `yo mint:tc`      克隆远端模板配置文件到脚手架
+
+   > 默认连接：`https://raw.githubusercontent.com/sweet-shop/generator-mint/master/generators/app/templateConfig.js`
+
+   
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tc.gif" style="zoom:50%;" />
+
+4. `yo mint:sc`      设置远端模板配置文件下载路径
+
+   ```shell
+   ? 请选择执行方式:  (Use arrow keys)
+   > custom # 自定义远端模板配置文件下载路径 确认后会要求你输入一个正确的 templateConfig.js 下载路径
+     default # 使用默认，选择此选项可以恢复脚手架默认下载链接
+   ```
+
+   `templateConfig.js` 示例：
+
+   ```javascript
+   module.exports = [
+       {
+           name: 'template-vue', // 名称，后续脚手架交互显示
+           url: 'https://github.com/sweet-shop/template-vue.git' // 远端维护的模板，必须git [github | gitlab]
+       }
+   ];
+   
+   ```
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-sc.gif" style="zoom:50%;" />
+
+5. `yo mint`            开始使用`mint`初始化您的项目
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint.gif" style="zoom:50%;" />
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif" style="zoom:50%;" />
+
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-custom.gif" style="zoom:50%;" />
+
+## template project 支持功能
 
 1.本地mock： 更改config/index.js : mockLocal: 1, // 1為本地 \ 0為代理 remote中可配置代理地址
 
