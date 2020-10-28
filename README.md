@@ -1,4 +1,4 @@
-# generator-mint 薄荷糖脚手架
+# generator-mint 薄荷糖脚手架 [En Doc](./README_EN.md)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
@@ -43,7 +43,7 @@ yo mint
     ├── .babel.config.js // babel配置
     ├── Makefile // Makefile配置
     ├── package.json // 项目依赖配置
-    ├── vue.config // vue配置
+    ├── vue.config.js // vue配置
     ├── LICENSE    // 许可证 MIT
     ├── config  // 通用配置等
     ├── mock  // mock
@@ -55,7 +55,6 @@ yo mint
     ├── ├── libs // 工具箱
     ├── ├── router // 路由配置
     ├── ├── store // store配置
-    ├── ├── views // 业务代码处
     └── └── views // 业务代码处
 
 ## generator-mint 支持功能
@@ -86,11 +85,22 @@ yo mint
       npm run dev     本地开发启动命令
       npm run build   本地build
       npm run lint    本地eslint检测
+    
+    Tool documentation： https://github.com/sweet-shop/generator-mint
+    author by @花夏 liubiao@itoxs.com
    ```
 
    <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif" style="zoom:50%;" />
 
+   ### 注意!!!
    
+   > 如果在使用这些命令: `yo mint:lang` `yo mint:tc` `yo mint:sc`
+   
+   > 出现权限问题，比如: `Error: EACCES: permission denied, open '/usr/local/lib/node_modules/generator-mint/generators/tc/config.json'`
+
+   > 请执行命令: `sudo chown -R $USER  /usr/local/lib/node_modules/generator-mint`
+   
+   > 其中: $USER 代表你当前电脑名. (此条只有mac会出现，Windows请使用管理员运行终端则不会出现)
 
 2. `yo mint:lang`  设置脚手架语言,执行此命令可以设置mint的交互显示语言
 
