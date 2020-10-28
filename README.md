@@ -159,7 +159,7 @@ yo mint
 
    <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif" style="zoom:50%;" />
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-custom.gif" style="zoom:50%;" />
+   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif" style="zoom:50%;" />
 
 ## template project 支持功能
 
