@@ -48,13 +48,13 @@
             "implement": "   yo mint         Execute in the root directory, initialize Project",
             "lang": "   yo mint:lang    Set generator language",
             "tc": "   yo mint:tc      Clone remote template configuration file to generator",
-            "sc": "   yo mint:sc      Set remote template download pathSet remote template download path"
+            "sc": "   yo mint:sc      Set remote template profile download path"
         },
         "project": {
             "title": "Project command",
-            "startUp": "   npm run dev   Local development start command",
-            "build": "   npm run build Local build",
-            "lint": "   npm run lint  Local eslint check"
+            "startUp": "   npm run dev     Local development start command",
+            "build": "   npm run build   Local build",
+            "lint": "   npm run lint    Local eslint check"
         }
     },
     "tc": {

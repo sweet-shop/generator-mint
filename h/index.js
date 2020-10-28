@@ -14,10 +14,10 @@ const logo = require('../h/logo').LOGO;
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
-        // 获取模板路径
-        this.templSrc = this.templatePath();
-        this.lang = require(`${path.join(this.templSrc, '../../lang/config.json')}`).lang || 'zh-CN';
-        this.langJSON = require(`${path.join(this.templSrc, `../../lang/i18n/${this.lang}.json`)}`);
+        const generatorName = this.rootGeneratorName();
+        this.ROOT = this.templatePath().split(path.sep).join('/').split(generatorName)[0] + generatorName;
+        this.lang = require(`${path.join(this.ROOT, '/lang/config.json')}`).lang || 'zh-CN';
+        this.langJSON = require(`${path.join(this.ROOT, `/lang/i18n/${this.lang}.json`)}`);
         this.h = this.langJSON.h;
     }
     echoHelp() {

@@ -11,7 +11,8 @@ const path = require('path');
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
-        this.ROOT = this.templatePath().split(path.sep).filter((path, index) => index < 3).join('/');
+        const generatorName = this.rootGeneratorName();
+        this.ROOT = this.templatePath().split(path.sep).join('/').split(generatorName)[0] + generatorName;
         this.lang = require(`${path.join(this.ROOT, '/lang/config.json')}`).lang || 'zh-CN';
         this.langJSON = require(`${path.join(this.ROOT, `/lang/i18n/${this.lang}.json`)}`);
         this.scJSON = this.langJSON.sc;

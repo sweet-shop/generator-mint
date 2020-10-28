@@ -9,7 +9,8 @@ const chalk = require('chalk');
 const path = require('path');
 function LOGO(contex) {
     const version = '';
-    contex.ROOT = contex.templatePath().split(path.sep).filter((path, index) => index < 3).join('/');
+    const generatorName = contex.rootGeneratorName();
+    contex.ROOT = contex.templatePath().split(path.sep).join('/').split(generatorName)[0] + generatorName;
     // 获取模板路径
     contex.templSrc = contex.templatePath();
     contex.lang = require(`${path.join(contex.ROOT, '/lang/config.json')}`).lang || 'zh-CN';
