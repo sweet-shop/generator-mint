@@ -22,7 +22,7 @@ Then generate your new project:
 ```bash
 yo mint
 ```
-After the directory is successfully generated, please read：[README.md](https://github.com/sweet-shop/generator-mint/blob/main/README.md)
+After the directory is successfully generated, please read：[README.md](https://github.com/sweet-shop/generator-mint/blob/master/README.md)
 
 he initialization of the project shelf is completed (Note: only the welcome sample page is available at this time). The directory structure is as follows：
 

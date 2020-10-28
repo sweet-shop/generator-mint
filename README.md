@@ -22,7 +22,7 @@ Then generate your new project:
 ```bash
 yo mint
 ```
-目录生成成功后，请阅读：[README.md](https://github.com/sweet-shop/generator-mint/blob/main/README.md)
+目录生成成功后，请阅读：[README.md](https://github.com/sweet-shop/generator-mint/blob/master/README.md)
 
 项目架子初始化完成（注意：这时只有welcome示例页面）,目录结构如下：
 
