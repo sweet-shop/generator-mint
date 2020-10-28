@@ -10,7 +10,7 @@
             "versionMessage": "版本号: ",
             "authorMessage": "作者: ",
             "emailMessage": "电子邮箱: ",
-            "licenseMessage": "Please choose license: ",
+            "licenseMessage": "请选择你想要的协议: ",
             "isSupportGitMessage": "是否支持git?"
         },
         "customPrompts": {
