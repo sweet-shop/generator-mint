@@ -1,9 +1,9 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: 创建bug报告帮助我们改进
 title: "[BUG] "
 labels: bug
-assignees: ''
+assignees: 'huarxia'
 
 ---
 
