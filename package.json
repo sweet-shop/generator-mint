@@ -15,6 +15,9 @@
     "lang"
   ],
   "main": "generators/app/templates/index.js",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint --no-fix ./**/*.js"
+  },
   "keywords": [
     "generator-minnt",
     "yeoman-generator"
@@ -34,7 +37,8 @@
   "repository": "https://github.com/sweet-shop/generator-mint",
   "license": "MIT",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.12.1"
   },
   "config": {
     "commitizen": {

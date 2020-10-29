@@ -7,22 +7,21 @@
 const ora = require('ora');
 const chalk = require('chalk');
 const Generator = require('yeoman-generator');
-const fs = require('fs');
 const path = require('path');
 const download = require('download');
 const ORA_SPINNER = {
     interval: 80,
     frames: [
-      '   ⠋',
-      '   ⠙',
-      '   ⠚',
-      '   ⠞',
-      '   ⠖',
-      '   ⠦',
-      '   ⠴',
-      '   ⠲',
-      '   ⠳',
-      '   ⠓'
+        '   ⠋',
+        '   ⠙',
+        '   ⠚',
+        '   ⠞',
+        '   ⠖',
+        '   ⠦',
+        '   ⠴',
+        '   ⠲',
+        '   ⠳',
+        '   ⠓'
     ]
 };
 module.exports = class extends Generator {

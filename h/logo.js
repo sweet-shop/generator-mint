@@ -8,7 +8,6 @@ const figlet = require('figlet');
 const chalk = require('chalk');
 const path = require('path');
 function LOGO(contex) {
-    const version = '';
     const generatorName = contex.rootGeneratorName();
     contex.ROOT = contex.templatePath().split(path.sep).join('/').split(generatorName)[0] + generatorName;
     // 获取模板路径
@@ -16,10 +15,6 @@ function LOGO(contex) {
     contex.lang = require(`${path.join(contex.ROOT, '/lang/config.json')}`).lang || 'zh-CN';
     contex.langJSON = require(`${path.join(contex.ROOT, `/lang/i18n/${contex.lang}.json`)}`);
     contex.logoJSON = contex.langJSON.logo;
-    try{
-        version = contex ? 'v' + contex.pkg.version : '';
-    }
-    catch (e) {}
     let logo = 'mint';
     const fontOptionsValue = {
         font: 'Standard',
@@ -27,13 +22,11 @@ function LOGO(contex) {
         verticalLayout: 'default'
     };
     const logoValue = figlet.textSync(logo, fontOptionsValue);
-    logo = chalk
-            .keyword('cyan')
-            .bold(logoValue);
+    logo = chalk.keyword('cyan').bold(logoValue);
     logo += `\n${contex.logoJSON.needHelp}` + chalk.magenta('  ===>  ') + chalk.green('yo mint:h');
     if (contex) {
         logo += '\nCMD: '+ chalk.green(contex.rootGeneratorName());
     }
     return logo;
-};
+}
 exports.LOGO = LOGO;

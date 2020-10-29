@@ -23,7 +23,7 @@ module.exports = class extends Generator {
     echoHelp() {
         this.pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '../package.json'), 'utf8'));
         this.log(logo(this));
-        var txt = [
+        const txt = [
             '',
             'mint@v' + chalk.green(this.pkg.version),
             'node@v' + chalk.yellow(process.version.substring(1)),
@@ -35,15 +35,15 @@ module.exports = class extends Generator {
             chalk.cyan(`${this.h.yo.lang}`),
             chalk.yellow(`${this.h.yo.tc}`),
             chalk.gray(`${this.h.yo.sc}`),
+            '',
             `${this.h.project.title}`,
             chalk.green(`${this.h.project.startUp}`),
             chalk.yellow(`${this.h.project.build}`),
             chalk.cyan(`${this.h.project.lint}`),
             '',
-            '', 
             `${this.h.root.doc} ${chalk.underline('https://github.com/sweet-shop/generator-mint')}`,
             `${this.h.root.author}`
         ].join('\n');
         this.log(txt);
-    };
+    }
 };

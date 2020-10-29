@@ -6,9 +6,7 @@
  */
 const path = require('path');
 const fs = require('fs');
-const chalk = require('chalk');
 const Generator = require('yeoman-generator');
-const del = require('del');
 const logo = require('../h/logo').LOGO;
 module.exports = class extends Generator {
     constructor(params, opts) {
@@ -54,14 +52,14 @@ module.exports = class extends Generator {
      * @param {String} path 指定绝对目录
      */
     _readDirectoryFileName(path) {
-        let filesName = []
+        let filesName = [];
         const files = fs.readdirSync(path);
-        files.forEach(function (item, index) {
-            let stat = fs.lstatSync(`${path}/${item}`)
-            if (!stat.isDirectory()) { 
+        files.forEach((item, index) => {
+            const stat = fs.lstatSync(`${path}/${item}`);
+            if (!stat.isDirectory()) {
                 filesName.push(item);
             }
-        })
+        });
         return filesName;
     }
 };

@@ -6,7 +6,6 @@
  */
 const chalk = require('chalk');
 const Generator = require('yeoman-generator');
-const fs = require('fs');
 const path = require('path');
 module.exports = class extends Generator {
     constructor(params, opts) {
