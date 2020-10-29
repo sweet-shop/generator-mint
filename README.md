@@ -90,7 +90,7 @@ yo mint
     author by @花夏 liubiao@itoxs.com
    ```
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif)
 
    ### 注意!!!
    
@@ -121,7 +121,7 @@ yo mint
      zh-CN
    ```
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-lang.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-lang.gif)
 
 3. `yo mint:tc`      克隆远端模板配置文件到脚手架
 
@@ -129,7 +129,7 @@ yo mint
 
    
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tc.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-tc.gif)
 
 4. `yo mint:sc`      设置远端模板配置文件下载路径
 
@@ -151,15 +151,15 @@ yo mint
    
    ```
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-sc.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-sc.gif)
 
 5. `yo mint`            开始使用`mint`初始化您的项目
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint.gif)
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif)
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif)
 
 ## template project 支持功能
 

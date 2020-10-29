@@ -91,7 +91,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
    author by @花夏 liubiao@itoxs.com
    ```
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif)
 
    ### FBI Warning!!!
    
@@ -122,7 +122,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
      zh-CN
    ```
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-lang.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-lang.gif)
 
 3. `yo mint:tc`      Clone remote template configuration file to generator-mint
 
@@ -130,7 +130,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
 
    
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tc.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-tc.gif)
 
 4. `yo mint:sc`      Set remote template profile download path
 
@@ -152,15 +152,15 @@ he initialization of the project shelf is completed (Note: only the welcome samp
    
    ```
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-sc.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-sc.gif)
 
 5. `yo mint`            Start initializing your project with `mint`
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint.gif)
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif)
 
-   <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif" style="zoom:50%;" />
+   ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif)
 
 ## template project: Support options
 
