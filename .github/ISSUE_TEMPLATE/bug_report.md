@@ -1,38 +1,38 @@
 ---
 name: Bug report
 about: Create a report to help us improve
-title: ''
+title: "[BUG] "
 labels: bug
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+### 这个bug是怎样产生的:
+___描述以及截图等___
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+### 这个bug是怎样复现的:
+___描述以及截图等___
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+### 桌面（请填写以下信息）：
+___操作系统：[例如iOS]___
+___浏览器[例如chrome、safari]___
+___版本[例如22]___
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+### 智能手机（请填写以下信息）：
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+___设备：[例如iPhone8p]___
+___操作系统：[例如iOS12.0]___
+___浏览器[例如UC浏览器、safari]___
+___版本[例如22]___
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+### 这个bug是怎样修复的:
+___描述以及截图等___
 
-**Additional context**
-Add any other context about the problem here.
+### 这个bug是修复后怎样测试的:
+___描述以及截图等___
+
+### 修复后的代码可能影响的功能以及范围:
+___描述以及截图等___
+
+### 附加上下文
+___在此处添加有关该问题的任何其他上下文___
