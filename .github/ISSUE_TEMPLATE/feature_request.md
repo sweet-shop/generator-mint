@@ -1,9 +1,9 @@
 ---
 name: Feature request
 about: 为此项目提供新的功能想法
-title: '[Feature]: 请修改你的标题，尽量准确'
-labels: 'Feature'
-assignees: 'huarxia'
+title: "[Feature]: 请修改你的标题，尽量准确"
+labels: Feature
+assignees: huarxia
 
 ---
 

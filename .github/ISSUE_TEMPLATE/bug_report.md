@@ -2,7 +2,7 @@
 name: Bug report
 about: 创建bug报告帮助我们改进
 title: "[Bug]: 请修改你的标题，尽量准确"
-labels: bug
+labels: ''
 assignees: huarxia
 
 ---
