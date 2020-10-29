@@ -1,20 +1,20 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+about: 为此项目提供新的功能想法
+title: '[Feature]: 请修改你的标题，尽量准确'
+labels: 'Feature'
+assignees: 'huarxia'
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**请具体描述你的功能请求.**
+描述以及截图等.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**描述你想要的解决方案**
+描述以及截图等.
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**描述你考虑过的替代方案**
+对您考虑过的任何替代解决方案或功能的清晰而简明的描述.
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**附加上下文附加上下文**
+在此处添加有关该问题的任何其他上下文.
