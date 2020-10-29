@@ -2,7 +2,6 @@
     "root": {
         "welcome": "🌺 Welcome to the generator-mint generator!",
         "tplPromptInit": {
-            "name": "🥗 The selected template is：",
             "message": "🍟 Please select a template!"
         },
         "prompts": {

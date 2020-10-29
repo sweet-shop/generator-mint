@@ -66,7 +66,7 @@ module.exports = class extends Generator {
         templateName.push('custom');
         let promptInit = [{
             type: 'list',
-            name: this.rootJSON.tplPromptInit.name,
+            name: 'choicesTemplateName',
             message: this.rootJSON.tplPromptInit.message,
             choices: templateName,
             default: 'default'
@@ -117,7 +117,7 @@ module.exports = class extends Generator {
                 return initProps;
             })
             .then((initProps) => {
-                const templateName = initProps[Object.keys(initProps)[0]];
+                const templateName = initProps.choicesTemplateName;
                 this.choiceTemplateName = templateName;
                 if (templateName === 'default') {
                     // 当处理完用户输入需要进入下一个生命周期阶段时必须调用这个方法

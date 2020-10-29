@@ -2,7 +2,6 @@
     "root": {
         "welcome": "🌺 欢迎使用 薄荷糖 脚手架!",
         "tplPromptInit": {
-            "name": "🥗 选择的模板是：",
             "message": "🍟 请选择模板!"
         },
         "prompts": {
