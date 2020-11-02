@@ -1,14 +1,128 @@
 <div class="welcome">
-    <Breadcrumb>
-        <BreadcrumbItem>欢迎</BreadcrumbItem>
-    </Breadcrumb>
+    <div class="title">
+        <h1>generator-mint 薄荷糖脚手架</h1>
+        <img src="https://img.shields.io/github/issues/sweet-shop/generator-mint.svg" class="shields">
+        <img src="https://img.shields.io/github/forks/sweet-shop/generator-mint.svg" class="shields">
+        <img src="https://img.shields.io/github/stars/sweet-shop/generator-mint.svg" class="shields">
+        <img src="https://img.shields.io/github/license/sweet-shop/generator-mint.svg" class="shields">
+    </div>
     <div class="content">
-        <Button
-            style="margin-left: 12px;" 
-            icon="ios-download-outline" 
-            :loading="exportLoading" 
-            @click="exportExcel">
-            导出
-        </Button>
+        <h2>Installation</h2>
+        <p>
+            First, install
+            <a target="_blank" href="http://yeoman.io">Yeoman</a>
+            and generator-mint using
+            <a target="_blank" href="https://www.npmjs.com/">npm</a>
+            (we assume you have pre-installed
+            <a target="_blank" href="https://nodejs.org/">node.js</a>).
+        </p>
+        <p class="code">
+            [sudo] npm install -g yo
+        </p>
+        <p class="code">
+            [sudo] npm install -g generator-mint
+        </p>
+        <p>Second, Then generate your new project:</p>
+        <p class="code">
+            yo mint
+        </p>
+        <h2>文档</h2>
+        <p>
+            目录生成成功后，请阅读：
+            <a target="_blank" href="https://github.com/sweet-shop/generator-mint/blob/master/generators/app/templates/README.md">README.md</a>
+        </p>
+        <h2>项目架子初始化完成（注意：这时只有welcome示例页面）,目录结构如下：</h2>
+        <p>
+            <h2>mint</h2>
+            ├── .gitignore  // 忽略git提交文件<br>
+            ├── README.md  // 项目说明文件<br>
+            ├── .browserslistrc  // .browserslistrc配置<br>
+            ├── .editorconfig  // .editorconfig配置<br>
+            ├── .env.*  // env.*编译配置<br>
+            ├── .babelrc  // babel编译配置<br>
+            ├── .editorconfig // 编辑器规范配置<br>
+            ├── .eslintignore // eslint代码检查忽略文件配置<br>
+            ├── .eslintrc.js  // eslint代码检查配置<br>
+            ├── .prettierignore  // prettier 忽略文件配置<br>
+            ├── .prettierrc // prettierrc配置<br>
+            ├── .stylelintignore // stylelinti 配置<br>
+            ├── .stylelintignore // stylelinti 忽略文件配置<br>
+            ├── .babel.config.js // babel配置<br>
+            ├── Makefile // Makefile配置<br>
+            ├── package.json // 项目依赖配置<br>
+            ├── vue.config.js // vue配置<br>
+            ├── LICENSE    // 许可证 MIT<br>
+            ├── config  // 通用配置等<br>
+            ├── mock  // mock<br>
+            ├── public  // 项目静态文件<br>
+            ├── src<br>
+            ├── ├── assets // 静态公用资源<br>
+            ├── ├── components // 公用组件<br>
+            ├── ├── install // vue install<br>
+            ├── ├── libs // 工具箱<br>
+            ├── ├── router // 路由配置<br>
+            ├── ├── store // store配置<br>
+            └── └── views // 业务代码处<br>
+        </p>
+        <h2>generator-mint 支持功能</h2>
+        <p class="code">1. yo mint:h        显示帮助</p>
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-h.gif" width="520px">
+        <h2>注意!!!</h2>
+        <p>
+            > 如果在使用这些命令: yo mint:lang yo mint:tc yo mint:sc<br>
+            <br>
+            > 出现权限问题，比如: Error: EACCES: permission denied, open '/usr/local/lib/node_modules/generator-mint/generators/tc/config.json'<br>
+            <br>
+            > 请执行命令: sudo chown -R $USER  /usr/local/lib/node_modules/generator-mint<br>
+            <br>
+            > 其中: $USER 代表你当前电脑名. (此条只有mac会出现，Windows请使用管理员运行终端则不会出现)
+        </p>
+        <p class="code">2. yo mint:lang`  设置脚手架语言,执行此命令可以设置mint的交互显示语言</p>
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-lang.gif" width="520px">
+        <p class="code">3. yo mint:tc      克隆远端模板配置文件到脚手架</p>
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tc.gif" width="520px">
+        <p class="code">4. yo mint:sc      设置远端模板配置文件下载路径</p>
+        <p>templateConfig.js 示例：</p>
+        <p class="code">
+            module.exports = [<br>
+            {<br>
+                name: 'template-vue', // 名称，后续脚手架交互显示<br>
+                url: 'https://github.com/sweet-shop/template-vue.git' // 远端维护的模板，必须git [github | gitlab]<br>
+            }<br>
+            ];
+        </p>
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-sc.gif" width="520px">
+        <p class="code">5. yo mint            开始使用`mint`初始化您的项目</p>
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint.gif" width="520px">
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-tpl.gif" width="520px">
+        <img src="https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif" width="520px">
+        <h2>template project 支持功能</h2>
+        <p>
+            1.本地mock： 更改config/index.js : mockLocal: 1, // 1為本地 \ 0為代理 remote中可配置代理地址<br>
+            <br>
+            2.自动获取本地局域方地址（192.*.*.*）方便局域网查看<br>
+            <br>
+            3.自动获取端口号(默认8888)，不再为端口号占用烦恼，提高效率<br>
+            <br>
+            4.运行 npm run dev后自动代开浏览器，不必手动打开，提高效率 更改config/index.js : browser: 'google chrome', // 可配置 firefox \ google chrome \ Safari
+            <br>
+            5.支持eslint 本地开发必须符合<a target="_blank" href="https://github.com/huarxia/standard">代码规范</a>,也可以单独运行npm run lint
+        </p>
+        <h2>感谢这些开源项目</h2>
+        <a style="display: block;" target="_blank" href="http://yeomanjs.org/">yeoman</a>
+        <a style="display: block;" target="_blank" href="https://cn.vuejs.org/">Vue.js</a>
+        <a style="display: block;" target="_blank" href="https://www.iviewui.com/">iviewui</a>
+        <h2>Contributors ✨</h2>
+        <table>
+            <tr class="user">
+              <td align="center">
+                <a href="https://huarxia.github.io/blog/">
+                    <img src="https://avatars0.githubusercontent.com/u/11221788?v=4" width="100px;" alt=""/><br>
+                    <sub><b> 花夏</b></sub>
+                </a><br/>
+                <a href="#design-huarxia" title="Design">🎨</a></td>
+            </tr>
+          </table>
+        <h2 class="code">MIT © [花夏](http://www.huar.love)</h2>
     </div>
 </div>

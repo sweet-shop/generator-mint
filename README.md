@@ -176,7 +176,7 @@ yo mint
 ## 感谢这些开源项目
 
 1. [yeoman](http://yeomanjs.org/)
-2. [Vue.js](http://vuejs.org/)
+2. [Vue.js](https://cn.vuejs.org/)
 3. [iviewui](https://www.iviewui.com/)
 
 ## Getting To Know Yeoman

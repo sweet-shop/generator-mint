@@ -5,21 +5,12 @@ export default {
     components: {},
     props: '',
     data() {
-        return {
-            exportLoading: false
-        };
+        return {};
     },
     computed: {},
     created() {},
     mounted() {},
-    methods: {
-        /**
-         * 表单导出示例
-         */
-        exportExcel() {
-            alert('导出');
-        }
-    }
+    methods: {}
 };
 </script>
 <style src="./index.less" lang="less" scoped></style>

@@ -4,7 +4,7 @@ export default [
         name: 'welcome',
         component: () => import('@/views/welcome'),
         meta: {
-            title: '🌺 Welcome to the generator-mint generator!'
+            title: 'Welcome to the generator-mint generator!'
         }
     }
 ];

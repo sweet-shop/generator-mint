@@ -1,11 +1,11 @@
 {
   "name": "generator-mint",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "mint薄荷糖脚手架",
   "homepage": "https://github.com/sweet-shop/generator-mint",
   "author": {
     "name": "花夏",
-    "email": "liubiao0810@live.cnn",
+    "email": "liubiao0810@live.cn",
     "url": "http://www.haur.love"
   },
   "files": [
