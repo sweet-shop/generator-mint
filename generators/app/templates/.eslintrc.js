@@ -10,7 +10,12 @@ module.exports = {
         // 禁止使用alert confirm prompt
         'no-alert': process.env.NODE_ENV === 'production' ? 'error' : 'off',
         // 强制缩进4个空格
-        'indent': ['error', 4],
+        'indent': ['error', 4, {
+            'SwitchCase': 1,
+            'outerIIFEBody': 0,
+            // 链式调用的缩进,关闭原因： then() 这样有多种写法，遵循规范即可
+            'MemberExpression': 'off'
+        }],
         // 函数名称或function关键字与开始参数之间允许有空格
         'space-before-function-paren': ['error', 'never'],
         // 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外
@@ -69,7 +74,7 @@ module.exports = {
         ],
         // 在ES5中需使用var
         // @off 没有必要限制
-        'no-var': 'off',
+        'no-var': 'error',
         // 禁止使用未定义的变量  建议将相关变量在上方 globals 配置项中配置
         // @warn 警示即可
         'no-undef': 'error',
@@ -190,7 +195,14 @@ module.exports = {
         // 避免多次调用回调什么的
         'callback-return': 'off',
         // 强制驼峰法命名
-        'camelcase': 'error',
+        'camelcase': ['error', {
+            // 允许不是驼峰对的配置s
+            'allow': [
+                'workorder_install',
+                'workorder_dismantle',
+                'workorder_reverse'
+            ]
+        }],
         // this别名
         'consistent-this': ['error', 'me'],
         // 必须使用 if(){} 中的{}
@@ -220,7 +232,9 @@ module.exports = {
         // 禁止比较时使用NaN，只能用isNaN()
         'use-isnan': 'error',
         // 必须使用合法的typeof的值
-        'valid-typeof': 'error'
+        'valid-typeof': 'error',
+        // 注释 '//'后必须跟一个空格
+        'spaced-comment': ['error', 'always']
     },
     parserOptions: {
         parser: 'babel-eslint'
