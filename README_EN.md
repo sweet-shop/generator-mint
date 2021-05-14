@@ -10,7 +10,7 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and generator-mint using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and `generator-mint` using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 [sudo] npm install -g yo
@@ -76,11 +76,12 @@ he initialization of the project shelf is completed (Note: only the welcome samp
    os@Windows_NT 10.0.18363
    
    Yeoman command
-      yo mint         Execute in the root directory, initialize Project
-      yo mint:h       Show help
-      yo mint:lang    Set generator language
-      yo mint:tc      Clone remote template configuration file to generator
-      yo mint:sc      Set remote template profile download path
+      yo mint            Execute in the root directory, initialize Project
+      yo mint:h          Show help
+      yo mint:lang       Set generator language
+      yo mint:tc         Clone remote template configuration file to generator
+      yo mint:sc         Set remote template profile download path
+      yo mint:add_tpl    Add a template configuration
    Project command
       npm run dev     Local development start command
       npm run build   Local build
@@ -162,7 +163,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
 
    ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif)
 
-## template project: Support options
+## default template project: Support options
 
 1. Local mock： chhange -- > config/index.js :  mockLocal: 1,  // 1 is local   0 is remote
 2. Automatically get the address of local area network (192. *. * *), which is convenient for local area network to view
