@@ -43,11 +43,12 @@
         },
         "yo": {
             "title": "Yeoman command",
-            "help": "   yo mint:h       Show help",
-            "implement": "   yo mint         Execute in the root directory, initialize Project",
-            "lang": "   yo mint:lang    Set generator language",
-            "tc": "   yo mint:tc      Clone remote template configuration file to generator",
-            "sc": "   yo mint:sc      Set remote template profile download path"
+            "help": "   yo mint:h             Show help",
+            "implement": "   yo mint               Execute in the root directory, initialize Project",
+            "lang": "   yo mint:lang          Set generator language",
+            "tc": "   yo mint:tc            Clone remote template configuration file to generator",
+            "sc": "   yo mint:sc            Set remote template profile download path",
+            "add_tpl": "   yo mint:add#tpl       Add template configuration"
         },
         "project": {
             "title": "Project command",
@@ -68,6 +69,16 @@
         "empty": "😱 What do you want? Empty address?????",
         "end": {
             "done": "🎉 done!"
+        }
+    },
+    "addTpl": {
+        "name": "Please enter your template name (template project name is recommended)",
+        "url": "Please enter your template URL",
+        "emptyName": "😱 You have to enter a name?",
+        "emptyUrl": "😱 You have to enter a URL?",
+        "end": {
+            "done": "🎉 You have finished setting up.",
+            "configInfo": "\n🎈Template configuration: "
         }
     },
     "logo": {

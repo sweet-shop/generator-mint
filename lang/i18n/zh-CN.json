@@ -43,11 +43,12 @@
         },
         "yo": {
             "title": "Yeoman 命令",
-            "help": "   yo mint:h       显示帮助",
-            "implement": "   yo mint         在根目录执行，初始化Project",
-            "lang": "   yo mint:lang    设置脚手架语言",
-            "tc": "   yo mint:tc      克隆远端模板配置文件到脚手架",
-            "sc": "   yo mint:sc      设置远端模板配置文件下载路径"
+            "help": "   yo mint:h             显示帮助",
+            "implement": "   yo mint               在根目录执行，初始化Project",
+            "lang": "   yo mint:lang          设置脚手架语言",
+            "tc": "   yo mint:tc            克隆远端模板配置文件到脚手架",
+            "sc": "   yo mint:sc            设置远端模板配置文件下载路径",
+            "add_tpl": "   yo mint:add#tpl       新增模板配置"
         },
         "project": {
             "title": "项目   命令",
@@ -68,6 +69,16 @@
         "empty": "😱 你想干啥? 空地址?????",
         "end": {
             "done": "🎉 完成"
+        }
+    },
+    "addTpl": {
+        "name": "请输入您的模板名称(建议使用模板工程名称)",
+        "url": "请输入你的模板URL",
+        "emptyName": "😱 你必须得输入一个名字吧？",
+        "emptyUrl": "😱 你必须得输入一个URL吧？",
+        "end": {
+            "done": "🎉 您已完成设置",
+            "configInfo": "\n🎈模板配置: "
         }
     },
     "logo": {
