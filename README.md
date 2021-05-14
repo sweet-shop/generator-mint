@@ -8,16 +8,16 @@
 [![GitHub stars](https://img.shields.io/github/stars/sweet-shop/generator-mint.svg)](https://github.com/sweet-shop/generator-mint/stargazers)
 [![GitHub license](https://img.shields.io/github/license/sweet-shop/generator-mint.svg)](https://github.com/sweet-shop/generator-mint/blob/master/LICENSE)
 
-## Installation
+## 安装
 
-First, install [Yeoman](http://yeoman.io) and generator-mint using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+首先,使用[npm](https://www.npmjs.com/)安装 [Yeoman](http://yeoman.io) 和 `generator-mint` (假设您已经预装了[node.js](https://nodejs.org/)).
 
 ```bash
 [sudo] npm install -g yo
 [sudo] npm install -g generator-mint
 ```
 
-Then generate your new project:
+然后生成一个新项目:
 
 ```bash
 yo mint
@@ -76,11 +76,12 @@ yo mint
    os@Windows_NT 10.0.18363
    
    Yeoman 命令
-      yo mint         在根目录执行，初始化Project
-      yo mint:h       显示帮助
-      yo mint:lang    设置脚手架语言
-      yo mint:tc      克隆远端模板配置文件到脚手架
-      yo mint:sc      设置远端模板配置文件下载路径
+      yo mint            在根目录执行，初始化Project
+      yo mint:h          显示帮助
+      yo mint:lang       设置脚手架语言
+      yo mint:tc         克隆远端模板配置文件到脚手架
+      yo mint:sc         设置远端模板配置文件下载路径
+      yo mint:add_tpl    新增模板配置
    项目   命令
       npm run dev     本地开发启动命令
       npm run build   本地build
@@ -161,7 +162,7 @@ yo mint
 
    ![](https://sweet-shop.github.io/obs/generator-mint/yo-mint-user-defined.gif)
 
-## template project 支持功能
+## 默认template project 支持功能
 
 1.本地mock： 更改config/index.js : mockLocal: 1, // 1為本地 \ 0為代理 remote中可配置代理地址
 
