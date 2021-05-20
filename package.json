@@ -12,7 +12,8 @@
     "generators",
     "generators/app/.gitignore",
     "h",
-    "lang"
+    "lang",
+    "tpl"
   ],
   "main": "generators/app/templates/index.js",
   "scripts": {

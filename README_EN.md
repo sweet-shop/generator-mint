@@ -81,7 +81,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
       yo mint:lang       Set generator language
       yo mint:tc         Clone remote template configuration file to generator
       yo mint:sc         Set remote template profile download path
-      yo mint:add_tpl    Add a template configuration
+      yo mint:tpl add    Add a template configuration
    Project command
       npm run dev     Local development start command
       npm run build   Local build

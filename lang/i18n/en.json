@@ -71,14 +71,17 @@
             "done": "🎉 done!"
         }
     },
-    "addTpl": {
-        "name": "Please enter your template name (template project name is recommended)",
-        "url": "Please enter your template URL",
-        "emptyName": "😱 You have to enter a name?",
-        "emptyUrl": "😱 You have to enter a URL?",
-        "end": {
-            "done": "🎉 You have finished setting up.",
-            "configInfo": "\n🎈Template configuration: "
+    "tpl": {
+        "no_order": "There is no such order",
+        "add": {
+            "name": "Please enter your template name (template project name is recommended)",
+            "url": "Please enter your template URL",
+            "emptyName": "😱 You have to enter a name?",
+            "emptyUrl": "😱 You have to enter a URL?",
+            "end": {
+                "done": "🎉 You have finished setting up.",
+                "configInfo": "\n🎈Template configuration: "
+            }
         }
     },
     "logo": {
