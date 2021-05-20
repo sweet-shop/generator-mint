@@ -82,6 +82,9 @@
                 "done": "🎉 您已完成设置",
                 "configInfo": "\n🎈模板配置: "
             }
+        },
+        "list": {
+            "placeholder": "🦄您的模板配置是: "
         }
     },
     "logo": {

@@ -82,6 +82,9 @@
                 "done": "🎉 You have finished setting up.",
                 "configInfo": "\n🎈Template configuration: "
             }
+        },
+        "list": {
+            "placeholder": "🦄Your template configuration: "
         }
     },
     "logo": {

@@ -1,5 +1,5 @@
 /*
- * @Description: 新增 yo:add#tpl 支持在模板配置文件中加入常用模板
+ * @Description: 新增 yo mint:tpl add 支持在模板配置文件中加入常用模板
  * @Version: V1.0.0
  * @Author: liubiao@itoxs.com
  * @Date: Fri May 14 2021 11:10:12
