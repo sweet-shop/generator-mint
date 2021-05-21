@@ -50,7 +50,8 @@
             "sc": "   yo mint:sc                             Set remote template profile download path",
             "list": "   yo mint:tpl / yo mint:tpl list         View template configuration",
             "add_tpl": "   yo mint:tpl add                        Add template configuration",
-            "move_tpl": "   yo mint:tpl move                       Move the template to the specified position"
+            "move_tpl": "   yo mint:tpl move                       Move the template to the specified position",
+            "export_tpl": "   yo mint:tpl export                     Export template to desktop"
         },
         "project": {
             "title": "Project command",
@@ -102,6 +103,13 @@
             "end": {
                 "done": "🎉 You have finished moving",
                 "configInfo": "\n🎈Template configuration"
+            }
+        },
+        "export": {
+            "exportPath": "Export path",
+            "exportFileName": "Export file name",
+            "end": {
+                "done": "🎉 You have finished exporting"
             }
         }
     },

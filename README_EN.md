@@ -76,15 +76,16 @@ he initialization of the project shelf is completed (Note: only the welcome samp
    os@Windows_NT 10.0.18363
    
    Yeoman command
-      yo mint            Execute in the root directory, initialize Project
-      yo mint:h          Show help
-      yo mint:lang       Set generator language
-      yo mint:tc         Clone remote template configuration file to generator
-      yo mint:sc         Set remote template profile download path
-      yo mint:tpl        View native template configuration
-      yo mint:tpl list   View native template configuration
-      yo mint:tpl add    Add a template configuration
-      yo mint:tpl move   Move the template to the specified position (convenient to move your common template to the front)
+      yo mint              Execute in the root directory, initialize Project
+      yo mint:h            Show help
+      yo mint:lang         Set generator language
+      yo mint:tc           Clone remote template configuration file to generator
+      yo mint:sc           Set remote template profile download path
+      yo mint:tpl          View native template configuration
+      yo mint:tpl list     View native template configuration
+      yo mint:tpl add      Add a template configuration
+      yo mint:tpl move     Move the template to the specified position (convenient to move your common template to the front)
+      yo mint:tpl export   Export template to desktop
    Project command
       npm run dev     Local development start command
       npm run build   Local build

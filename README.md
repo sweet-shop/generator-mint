@@ -76,15 +76,16 @@ yo mint
    os@Windows_NT 10.0.18363
    
    Yeoman 命令
-      yo mint            在根目录执行，初始化Project
-      yo mint:h          显示帮助
-      yo mint:lang       设置脚手架语言
-      yo mint:tc         克隆远端模板配置文件到脚手架
-      yo mint:sc         设置远端模板配置文件下载路径
-      yo mint:tpl        查看本机模板配置
-      yo mint:tpl list   查看本机模板配置
-      yo mint:tpl add    新增模板配置
-      yo mint:tpl move   移动模板到指定位置(方便将自己常用的移动至最前面)
+      yo mint              在根目录执行，初始化Project
+      yo mint:h            显示帮助
+      yo mint:lang         设置脚手架语言
+      yo mint:tc           克隆远端模板配置文件到脚手架
+      yo mint:sc           设置远端模板配置文件下载路径
+      yo mint:tpl          查看本机模板配置
+      yo mint:tpl list     查看本机模板配置
+      yo mint:tpl add      新增模板配置
+      yo mint:tpl move     移动模板到指定位置(方便将自己常用的移动至最前面)
+      yo mint:tpl export   导出模板到桌面
    项目   命令
       npm run dev     本地开发启动命令
       npm run build   本地build

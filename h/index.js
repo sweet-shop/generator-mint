@@ -38,6 +38,7 @@ module.exports = class extends Generator {
             chalk.blue(`${this.h.yo.list}`),
             chalk.green(`${this.h.yo.add_tpl}`),
             chalk.magenta(`${this.h.yo.move_tpl}`),
+            chalk.cyan(`${this.h.yo.export_tpl}`),
             '',
             `${this.h.project.title}`,
             chalk.green(`${this.h.project.startUp}`),

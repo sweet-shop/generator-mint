@@ -50,7 +50,8 @@
             "sc": "   yo mint:sc                               设置远端模板配置文件下载路径",
             "list": "   yo mint:tpl / yo mint:tpl list           查看模板配置",
             "add_tpl": "   yo mint:tpl add                          新增模板配置",
-            "move_tpl": "   yo mint:tpl move                         移动模板到指定位置"
+            "move_tpl": "   yo mint:tpl move                         移动模板到指定位置",
+            "export_tpl": "   yo mint:tpl export                       导出模板板到桌面"
         },
         "project": {
             "title": "项目   命令",
@@ -102,6 +103,13 @@
             "end": {
                 "done": "🎉 您已完成移动",
                 "configInfo": "\n🎈模板配置"
+            }
+        },
+        "export": {
+            "exportPath": "导出路径",
+            "exportFileName": "导出文件名",
+            "end": {
+                "done": "🎉 您已完成导出"
             }
         }
     },
