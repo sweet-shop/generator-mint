@@ -9,11 +9,8 @@
  */
 const chalk = require('chalk');
 const Generator = require('yeoman-generator');
-const fs = require('fs');
-var os = require('os');
 const path = require('path');
-const $dayjs = require('dayjs');
-const templateConfig = require('../../app/templateConfig');
+const templateConfig = require('../../lib/getTemplateConfig');
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
@@ -25,7 +22,8 @@ module.exports = class extends Generator {
     }
     initializing() {
         this.log(chalk.bgCyan(this.tplJSON.placeholder));
-        this.log(JSON.stringify(templateConfig, null, 4));
+        const conTpl = templateConfig.getTemplateConfigOfTable();
+        this.log(conTpl);
     }
     end() {}
 };

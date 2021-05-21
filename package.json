@@ -32,6 +32,7 @@
     "figlet": "^1.5.0",
     "git-config": "0.0.7",
     "ora": "^5.1.0",
+    "word-table": "^1.0.3",
     "yeoman-generator": "^4.12.0",
     "yosay": "^2.0.2"
   },

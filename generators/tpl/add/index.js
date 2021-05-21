@@ -12,7 +12,7 @@ const fs = require('fs');
 var os = require('os');
 const path = require('path');
 const $dayjs = require('dayjs');
-const templateConfig = require('../../app/templateConfig');
+const templateConfig = require('../../lib/getTemplateConfig');
 module.exports = class extends Generator {
     constructor(params, opts) {
         super(params, opts);
@@ -68,7 +68,8 @@ module.exports = class extends Generator {
         this._setTemplateConfig();
     }
     _setTemplateConfig() {
-        const TPL_CON = [].concat(templateConfig);
+        const conf = templateConfig.getTemplateConfigOfJson();
+        const TPL_CON = [].concat(conf);
         const NEW_TPL = {
             name: this.name,
             url: this.url
@@ -96,7 +97,7 @@ module.exports = ${JSON.stringify(TPL_CON)};`;
                 const info = chalk.green(this.tplJSON.end.done);
                 this.log(info);
                 this.log(chalk.cyan(this.tplJSON.end.configInfo));
-                this.log(JSON.stringify(TPL_CON, null, 4));
+                this.log(templateConfig.getTemplateConfigOfTable(TPL_CON));
             }
         );
     }
