@@ -84,6 +84,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
       yo mint:tpl        View native template configuration
       yo mint:tpl list   View native template configuration
       yo mint:tpl add    Add a template configuration
+      yo mint:tpl move   Move the template to the specified position (convenient to move your common template to the front)
    Project command
       npm run dev     Local development start command
       npm run build   Local build

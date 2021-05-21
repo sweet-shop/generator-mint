@@ -49,7 +49,8 @@
             "tc": "   yo mint:tc                             Clone remote template configuration file to generator",
             "sc": "   yo mint:sc                             Set remote template profile download path",
             "list": "   yo mint:tpl / yo mint:tpl list         View template configuration",
-            "add_tpl": "   yo mint:tpl add                        Add template configuration"
+            "add_tpl": "   yo mint:tpl add                        Add template configuration",
+            "move_tpl": "   yo mint:tpl move                       Move the template to the specified position"
         },
         "project": {
             "title": "Project command",
@@ -74,7 +75,7 @@
     },
     "tpl": {
         "no_order": "There is no such order",
-        "tpl_table_index": "order",
+        "tpl_table_index": "position",
         "tpl_table_name": "Template name",
         "tpl_table_url": "Template URL",
         "add": {
@@ -89,6 +90,19 @@
         },
         "list": {
             "placeholder": "🦄Your template configuration"
+        },
+        "move": {
+            "emptyNum": "😱 You have to enter a number？",
+            "only": "😱 Currently, there is only one template, and it does not need to be moved~~",
+            "exceedNumMax": "😱 The value you entered cannot exceed the maximum value",
+            "exceedNumMin": "😱 The value you entered cannot exceed the minimum value",
+            "unchange": "The position to be moved is the same as the current position",
+            "curIndex": "Please enter the current position",
+            "targetIndex": "Please enter the target position",
+            "end": {
+                "done": "🎉 You have finished moving",
+                "configInfo": "\n🎈Template configuration"
+            }
         }
     },
     "logo": {
