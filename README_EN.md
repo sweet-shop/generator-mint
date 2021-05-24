@@ -86,6 +86,7 @@ he initialization of the project shelf is completed (Note: only the welcome samp
       yo mint:tpl add      Add a template configuration
       yo mint:tpl move     Move the template to the specified position (convenient to move your common template to the front)
       yo mint:tpl export   Export template to desktop
+      yo mint:tpl del      Delete template configuration
    Project command
       npm run dev     Local development start command
       npm run build   Local build

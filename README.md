@@ -86,6 +86,7 @@ yo mint
       yo mint:tpl add      新增模板配置
       yo mint:tpl move     移动模板到指定位置(方便将自己常用的移动至最前面)
       yo mint:tpl export   导出模板到桌面
+      yo mint:tpl del      删除模板配置
    项目   命令
       npm run dev     本地开发启动命令
       npm run build   本地build
