@@ -51,7 +51,8 @@
             "list": "   yo mint:tpl / yo mint:tpl list           查看模板配置",
             "add_tpl": "   yo mint:tpl add                          新增模板配置",
             "move_tpl": "   yo mint:tpl move                         移动模板到指定位置",
-            "export_tpl": "   yo mint:tpl export                       导出模板板到桌面"
+            "export_tpl": "   yo mint:tpl export                       导出模板到桌面",
+            "del_tpl": "   yo mint:tpl del                          删除模板配置"
         },
         "project": {
             "title": "项目   命令",
@@ -110,6 +111,16 @@
             "exportFileName": "导出文件名",
             "end": {
                 "done": "🎉 您已完成导出"
+            }
+        },
+        "del": {
+            "emptyNum": "😱 你必须输入一个数字？",
+            "exceedNumMax": "😱 你输入的值不能超过最大值",
+            "exceedNumMin": "😱 你输入的值不能超过最小值",
+            "index": "请输入要删除的位置",
+            "end": {
+                "done": "🎉 您已完成删除",
+                "configInfo": "\n🎈模板配置"
             }
         }
     },

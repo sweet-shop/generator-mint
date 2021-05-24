@@ -51,7 +51,8 @@
             "list": "   yo mint:tpl / yo mint:tpl list         View template configuration",
             "add_tpl": "   yo mint:tpl add                        Add template configuration",
             "move_tpl": "   yo mint:tpl move                       Move the template to the specified position",
-            "export_tpl": "   yo mint:tpl export                     Export template to desktop"
+            "export_tpl": "   yo mint:tpl export                     Export template to desktop",
+            "del_tpl": "   yo mint:tpl del                        Delete template configuration"
         },
         "project": {
             "title": "Project command",
@@ -110,6 +111,16 @@
             "exportFileName": "Export file name",
             "end": {
                 "done": "🎉 You have finished exporting"
+            }
+        },
+        "del": {
+            "emptyNum": "😱 You have to enter a number？",
+            "exceedNumMax": "😱 The value you entered cannot exceed the maximum value",
+            "exceedNumMin": "😱 The value you entered cannot exceed the minimum value",
+            "index": "Please enter the position to delete",
+            "end": {
+                "done": "🎉 You have finished deleting",
+                "configInfo": "\n🎈Template configuration"
             }
         }
     },
